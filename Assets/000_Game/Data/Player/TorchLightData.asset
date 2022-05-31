@@ -20,7 +20,7 @@ MonoBehaviour:
   FocusIntensity: 2
   FocusIntensityDuration: 0.5
   FocusIntensityEase: 1
-  FocusingDuration: 0.5
-  FocusingLayer:
+  InteractionDuration: 0.5
+  InteractionLayer:
     serializedVersion: 2
     m_Bits: 64
