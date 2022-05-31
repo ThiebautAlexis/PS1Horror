@@ -1,0 +1,18 @@
+{
+    "name": "HorrorPS1.Physics",
+    "rootNamespace": "HorrorPS1.Physics",
+    "references": [
+        "GUID:75799b8099ce2e54f8f796e3acc8e06f",
+        "GUID:b02c19ad93fadfb44a72e85b947c9047",
+        "GUID:f3349f018dcc80840bb8f15898a87a80"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -13,20 +13,20 @@ MonoBehaviour:
   m_Name: EnhancedEditorSettings
   m_EditorClassIdentifier: 
   userSettings:
-    buildDirectory: D:/Unity/PS1Horror  Project/PS1Horror/Builds
+    buildDirectory: 
     AutosaveInterval: 300
     SceneDesignerFolders: []
     increaseTimeScale:
-      m_Name: Increase Time Scale
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 3171a2f4-0a95-4227-b0ff-3648888bc1fa
+      m_Id: 
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
     resetTimeScale:
-      m_Name: Reset Time Scale
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
       m_Id: 
@@ -35,7 +35,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     decreaseTimeScale:
-      m_Name: Decrease Time Scale
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
       m_Id: 
