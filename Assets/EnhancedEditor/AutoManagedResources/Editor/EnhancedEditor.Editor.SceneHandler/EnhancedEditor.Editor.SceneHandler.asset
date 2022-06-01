@@ -16,6 +16,7 @@ MonoBehaviour:
   - Name: Default Group
     Scenes:
     - GUID: f154c191265dddb48a9de44305dc971a
+    - GUID: 18c1a57bbf0c9184c841b4e3837d2552
     - GUID: b2e6d86bc4a6a714586e4a1828a5e79d
     - GUID: 99c9720ab356a0642a771bea13969a05
     - GUID: 675c32bc094caaf488fef808cf056c6e
@@ -28,6 +29,7 @@ MonoBehaviour:
     - GUID: f1fb858dce6e0e0499b9cc30d9b3dec6
     - GUID: 74717ff5a2a779343ade44d734abede1
     - GUID: 9154e7a0f8a0e3d4db7db90c0cf3ddb3
+    - GUID: e9017d5f96b9f09489b4b37e1d6eb914
     - GUID: 9fc0d4010bbf28b4594072e72b8655ab
   bundleGroups:
   - Name: Default Group

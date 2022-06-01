@@ -16,6 +16,8 @@ MonoBehaviour:
   nonBuildScenes:
   - Name: Alexis_Test
     GUID: f154c191265dddb48a9de44305dc971a
+  - Name: CoreScene
+    GUID: 18c1a57bbf0c9184c841b4e3837d2552
   - Name: SampleScene
     GUID: 9fc0d4010bbf28b4594072e72b8655ab
   - Name: Example_FirstPerson
