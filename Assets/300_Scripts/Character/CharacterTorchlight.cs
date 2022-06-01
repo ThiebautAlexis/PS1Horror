@@ -57,6 +57,9 @@ namespace HorrorPS1
 
         public bool CastInteraction()
         {
+#if UNITY_EDITOR
+            Debug.DrawRay(light.transform.position, light.transform.forward * light.range, Color.yellow);
+#endif
             int _amount = Physics.RaycastNonAlloc(light.transform.position, light.transform.forward, interactionArray, light.range , data.InteractionLayer);
             if(_amount > 0)
                 return interactionArray[0].collider.TryGetComponent(out currentInteractable);
