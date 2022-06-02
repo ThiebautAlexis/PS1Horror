@@ -232,6 +232,7 @@ namespace EnhancedEditor
         public event Action<SceneBundle> OnCompleted = null;
 
         private readonly UnloadSceneOptions options = 0;
+        private readonly int skippedIndex = -1;
 
         /// <summary>
         /// Has the operation finished, that is all scenes in this bundle been fully unloaded?
@@ -250,6 +251,19 @@ namespace EnhancedEditor
         {
             bundle = _bundle;
             options = _options;
+
+            // Launch first operation.
+            if (UnloadNextScene())
+            {
+                currentOperation.completed += OnOperationComplete;
+            }
+        }
+
+        internal UnloadBundleAsyncOperation(SceneBundle _bundle, int _skippedIndex, UnloadSceneOptions _options)
+        {
+            bundle = _bundle;
+            options = _options;
+            skippedIndex = _skippedIndex;
 
             // Launch first operation.
             if (UnloadNextScene())
@@ -294,15 +308,35 @@ namespace EnhancedEditor
             }
         }
 
-        private bool UnloadNextScene()
+        protected bool UnloadNextScene()
         {
             bool _canUnloadScene;
+            if (sceneIndex == skippedIndex)
+            {
+                sceneIndex++;
+                if ((sceneIndex >= bundle.Scenes.Length))
+                {
+                    isDone = true;
+                    progress = 1f;
+
+                    OnCompleted?.Invoke(bundle);
+
+                    return false;
+                }
+            }
+
+
             while (!(_canUnloadScene = SceneManager.sceneCount > 1) || !bundle.Scenes[sceneIndex].UnloadAsync(options, out currentOperation))
             {
+                if (sceneIndex == skippedIndex)
+                {
+                    sceneIndex++;
+                }
+
                 sceneIndex++;
 
                 // Complete operation.
-                if (!_canUnloadScene || (sceneIndex == bundle.Scenes.Length))
+                if (!_canUnloadScene || (sceneIndex >= bundle.Scenes.Length))
                 {
                     isDone = true;
                     progress = 1f;

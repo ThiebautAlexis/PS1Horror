@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9755652fb159c034ebc2c29aa63bc9e5, type: 3}
-  m_Name: PlayerAttributesData
+  m_Script: {fileID: 11500000, guid: e7bcfe997be4aa74bbe2e40f1472c096, type: 3}
+  m_Name: AlexisSceneBundle
   m_EditorClassIdentifier: 
-  SprintMultiplier: 1.2
-  SprintLimit: 2
-  SprintThreshold: 1
-  RotationSpeed: 200
-  RotationThreshold: 40
-  RotationCooldown: 2
+  Scenes:
+  - guid: dfa310d555bb12644887e313954b56ab
+  - guid: 5baf8bdcd50030f4f9efd1be21306746
+  comment: 

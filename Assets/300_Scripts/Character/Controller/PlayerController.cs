@@ -49,6 +49,9 @@ namespace HorrorPS1
         [Section("Attributes")]
         [SerializeField, Enhanced] private PlayerAttributes playerAttributes = null;
 
+        [Section("UI")]
+        [SerializeField, Enhanced] private UnityEngine.UI.Image staminaGauge = null;
+
         private bool isSprinting = false;
         private float sprintTimer = 0f;
         #endregion
@@ -67,8 +70,21 @@ namespace HorrorPS1
             interactAction.Enable();
             sprintAction = inputActionAsset.FindAction(sprintActionPath, true);
             sprintAction.Enable();
+
+            GameState.OnCameraChange += SetCurrentCamera;
         }
 
+        protected override void OnDeactivation()
+        {
+            base.OnDeactivation();
+            moveAction.Disable();
+            lookAction.Disable();
+            interactAction.Disable();
+            sprintAction.Disable();
+
+
+            GameState.OnCameraChange -= SetCurrentCamera;
+        }
 
         void IInputUpdate.Update()
         {
@@ -77,19 +93,18 @@ namespace HorrorPS1
             playerMovable.AddForwardMovement(_movement.y);
 
             // Check here if the sprint input is triggered
-            isSprinting = sprintAction.IsPressed();
-            if (isSprinting) 
-            {
-                sprintTimer = Mathf.Min(playerAttributes.SprintLimit, sprintTimer + Time.deltaTime);
-                if(sprintTimer == playerAttributes.SprintLimit)
-                {
-                    isSprinting = false;
-                }
-            }
-            else 
-            {
-                sprintTimer = Mathf.Max(0, sprintTimer - Time.deltaTime);
-            }
+            //if(!isSprinting && (sprintTimer/playerAttributes.SprintLimit) > playerAttributes.SprintThreshold )
+            //{
+            //    this.Log("in cooldown");
+            //    isSprinting = false;
+            //}
+            //else isSprinting = sprintAction.IsPressed();
+
+            isSprinting = !isSprinting && (sprintTimer / playerAttributes.SprintLimit) > playerAttributes.SprintThreshold ? // if is in cooldown
+                          false :                                                                                           // then false
+                          sprintAction.IsPressed();                                                                         // else check input
+
+            ApplySprint();
 
 
             if (interactAction.WasPressedThisFrame())
@@ -97,6 +112,25 @@ namespace HorrorPS1
             else if (interactAction.WasReleasedThisFrame())
                 torchlight.UnfocusTorchLight();
         }
+
+        private void ApplySprint()
+        {
+            if (isSprinting)
+            {
+                sprintTimer = Mathf.Min(playerAttributes.SprintLimit, sprintTimer + Time.deltaTime);
+                if (sprintTimer == playerAttributes.SprintLimit)
+                {
+                    isSprinting = false;
+                }
+            }
+            else
+            {
+                sprintTimer = Mathf.Max(0, sprintTimer - Time.deltaTime);
+            }
+            staminaGauge.fillAmount =  Mathf.MoveTowards(staminaGauge.fillAmount, 1f - (sprintTimer / playerAttributes.SprintLimit), Time.deltaTime);
+        }
+
+        private void SetCurrentCamera(Camera _cam) => currentCamera = _cam;
 
         #region IMovable Controller
         public bool OnPlayHorizontalObstacle(int _hash, int _value) => false;

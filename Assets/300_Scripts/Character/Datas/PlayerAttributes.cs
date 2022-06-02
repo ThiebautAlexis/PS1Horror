@@ -11,6 +11,7 @@ namespace HorrorPS1
         [Header("Sprint")]
         public float SprintMultiplier = 1.2f;
         public float SprintLimit = 5.0f;
+        public float SprintThreshold = .5f;
 
         [Header("Rotation Settings")]
         public float RotationSpeed = 15.0f;
