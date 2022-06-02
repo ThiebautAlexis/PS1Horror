@@ -44,7 +44,6 @@ namespace HorrorPS1
 
         [Section("Camera")]
         [SerializeField, Enhanced] private bool useDirectionFromCamera = false;
-        [SerializeField, Enhanced, ShowIf("useDirectionFromCamera")] private Camera currentCamera = null;
 
         [Section("Attributes")]
         [SerializeField, Enhanced] private PlayerAttributes playerAttributes = null;
@@ -54,6 +53,9 @@ namespace HorrorPS1
 
         private bool isSprinting = false;
         private float sprintTimer = 0f;
+        private Vector3 previousMovement = Vector3.zero;
+        private Quaternion cameraReferenceRotation = Quaternion.identity;
+        private Quaternion referenceRotation = Quaternion.identity;
         #endregion
 
         #region Methods 
@@ -77,6 +79,7 @@ namespace HorrorPS1
         protected override void OnDeactivation()
         {
             base.OnDeactivation();
+
             moveAction.Disable();
             lookAction.Disable();
             interactAction.Disable();
@@ -93,13 +96,6 @@ namespace HorrorPS1
             playerMovable.AddForwardMovement(_movement.y);
 
             // Check here if the sprint input is triggered
-            //if(!isSprinting && (sprintTimer/playerAttributes.SprintLimit) > playerAttributes.SprintThreshold )
-            //{
-            //    this.Log("in cooldown");
-            //    isSprinting = false;
-            //}
-            //else isSprinting = sprintAction.IsPressed();
-
             isSprinting = !isSprinting && (sprintTimer / playerAttributes.SprintLimit) > playerAttributes.SprintThreshold ? // if is in cooldown
                           false :                                                                                           // then false
                           sprintAction.IsPressed();                                                                         // else check input
@@ -130,7 +126,12 @@ namespace HorrorPS1
             staminaGauge.fillAmount =  Mathf.MoveTowards(staminaGauge.fillAmount, 1f - (sprintTimer / playerAttributes.SprintLimit), Time.deltaTime);
         }
 
-        private void SetCurrentCamera(Camera _cam) => currentCamera = _cam;
+        private void SetCurrentCamera(Cinemachine.CinemachineVirtualCamera _cam)
+        {
+            cameraReferenceRotation = _cam.transform.rotation;
+            if (referenceRotation == Quaternion.identity)
+                referenceRotation = cameraReferenceRotation;
+        }
 
         #region IMovable Controller
         public bool OnPlayHorizontalObstacle(int _hash, int _value) => false;
@@ -144,6 +145,7 @@ namespace HorrorPS1
 
             if (Mathf.Abs(_movement.x) <= Mathf.Epsilon && Mathf.Abs(_movement.z) <= Mathf.Epsilon)
             {
+                previousMovement = _movement;
                 return false;
             }
 
@@ -153,7 +155,12 @@ namespace HorrorPS1
 
             // Rotation 
             if (useDirectionFromCamera)
-                _movement = currentCamera.transform.rotation * _movement;
+            {
+                if (cameraReferenceRotation != referenceRotation && Mathf.Abs(previousMovement.x) <= Mathf.Epsilon && Mathf.Abs(previousMovement.z) <= Mathf.Epsilon)
+                    referenceRotation = cameraReferenceRotation;
+
+                _movement = referenceRotation * _movement;
+            }
             _movement.y = 0f;
             Quaternion _aimedAngle = Quaternion.LookRotation(_movement, Vector3.up);
             previousAimedAngle = _aimedAngle;
@@ -162,7 +169,8 @@ namespace HorrorPS1
             if (Mathf.Abs(_aimedAngle.eulerAngles.y - transform.eulerAngles.y) > playerAttributes.RotationThreshold)
             {
                 _movement = Vector3.zero;
-            }           
+            }
+            previousMovement = _movement;
             return false;
         }
 

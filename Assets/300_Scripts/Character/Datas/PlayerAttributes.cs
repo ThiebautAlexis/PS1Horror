@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace HorrorPS1
 {
-    [CreateAssetMenu(fileName = "Player Data", menuName = "PS1 Horror Game/Data/Player Data", order = 150)]
+    [CreateAssetMenu(fileName = "Player Data", menuName = "PS1 Horror Game/Player/Player Data", order = 150)]
     public class PlayerAttributes : ScriptableObject
     {
         #region Content 
