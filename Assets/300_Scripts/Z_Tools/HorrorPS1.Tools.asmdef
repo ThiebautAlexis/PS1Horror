@@ -2,7 +2,7 @@
     "name": "HorrorPS1.Tools",
     "rootNamespace": "HorrorPS1.Tools",
     "references": [
-        "GUID:75799b8099ce2e54f8f796e3acc8e06f"
+        "GUID:e1b497abd7f3fe743a7073b7fe015653"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
