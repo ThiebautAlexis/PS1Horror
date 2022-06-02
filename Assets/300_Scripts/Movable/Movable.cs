@@ -191,6 +191,7 @@ namespace HorrorPS1.Movable
         public bool IsGrounded => isGrounded;
 
         public float Speed => speed;
+        public float MaxSpeed => attributes._speedRange.y;
         public float VelocityCoef => velocityCoef;
 
         // -----------------------
