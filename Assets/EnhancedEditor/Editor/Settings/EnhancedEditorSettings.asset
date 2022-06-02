@@ -47,5 +47,5 @@ MonoBehaviour:
   InstanceTrackerDirectory: EnhancedEditor/Editor/InstanceTrackers
   ScriptTemplateDirectory: EnhancedEditor/Editor/ScriptTemplates
   CoreScene:
-    guid: 18c1a57bbf0c9184c841b4e3837d2552
-  IsCoreSceneEnabled: 1
+    guid: 
+  IsCoreSceneEnabled: 0
