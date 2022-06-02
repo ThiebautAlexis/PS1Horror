@@ -6,6 +6,7 @@ using Range = EnhancedEditor.RangeAttribute;
 
 namespace HorrorPS1.Movable
 {
+    [CreateAssetMenu(fileName = "Horror/MovableAttributes", menuName = "", order = 0)]
     public class MovableAttributes : ScriptableObject
     {
         [Enhanced, MinMax(0f, 50f)] public Vector2 _speedRange = Vector2.zero;

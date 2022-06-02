@@ -1,0 +1,20 @@
+{
+    "name": "HorrorPS1.WalkieTalkie.Editor",
+    "rootNamespace": "HorrorPS1.WalkieTalkie.Editor",
+    "references": [
+        "GUID:e05a9c309fb74104981ea5ed568efff3",
+        "GUID:e1b497abd7f3fe743a7073b7fe015653",
+        "GUID:04b1b9ef3eeac9c4491f1ad4df9c9587"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

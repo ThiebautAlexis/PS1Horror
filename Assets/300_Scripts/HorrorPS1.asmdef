@@ -3,18 +3,17 @@
     "rootNamespace": "HorrorPS1",
     "references": [
         "GUID:6055be8ebefd69e48b49212b09b47b2f",
-        "GUID:75799b8099ce2e54f8f796e3acc8e06f",
         "GUID:f06555f75b070af458a003d92f9efb00",
         "GUID:9c48250e943b8ca4f97dbedc44c41089",
         "GUID:4307f53044263cf4b835bd812fc161a4",
         "GUID:c2cf9af3ccf83e544a9ecc08e99c524c",
         "GUID:75469ad4d38634e559750d17036d5f7c",
-        "GUID:40b7d6c7684ba8344a2bb87cec188e3a",
         "GUID:a21214c6ed197da40b03214968312e14",
         "GUID:344fd75ca7658d541a54a818864b82f1",
         "GUID:a56f1d6cf11eb794cbe25d7b9591d0cc",
         "GUID:b02c19ad93fadfb44a72e85b947c9047",
-        "GUID:f3349f018dcc80840bb8f15898a87a80"
+        "GUID:f3349f018dcc80840bb8f15898a87a80",
+        "GUID:e1b497abd7f3fe743a7073b7fe015653"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
