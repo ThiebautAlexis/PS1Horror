@@ -14,7 +14,6 @@ namespace HorrorPS1
         [SerializeField, ReadOnly] private bool canInteract = false;
 
         private IInteractable currentInteractable = null;
-        private float interactionTimer = 0.0f;
         private static readonly RaycastHit[] interactionArray = new RaycastHit[1];
         #endregion
 
@@ -55,28 +54,37 @@ namespace HorrorPS1
             };
         }
 
-        public bool CastInteraction()
+        public bool CastInteraction(out IInteractable _interactable)
         {
 #if UNITY_EDITOR
             Debug.DrawRay(light.transform.position, light.transform.forward * light.range, Color.yellow);
 #endif
             int _amount = Physics.RaycastNonAlloc(light.transform.position, light.transform.forward, interactionArray, light.range , data.InteractionLayer);
             if(_amount > 0)
-                return interactionArray[0].collider.TryGetComponent(out currentInteractable);
+                return interactionArray[0].collider.TryGetComponent(out _interactable);
+            _interactable = null;
             return false;
 
         }
         
         private void Update()
         {
-            if(canInteract && CastInteraction())
+            if(canInteract && CastInteraction(out IInteractable _interactable))
             {
-                interactionTimer += Time.deltaTime;
-                if(interactionTimer >= data.InteractionDuration)
+                if (_interactable == currentInteractable)
+                    return;
+
+                if(currentInteractable != null)
                 {
-                    interactionTimer = 0.0f;
-                    currentInteractable.Interact();
+                    currentInteractable.CancelInteraction();
                 }
+                currentInteractable = _interactable;
+                currentInteractable.Interact();
+            }
+            else if(currentInteractable != null)
+            {
+                currentInteractable.CancelInteraction();
+                currentInteractable = null;
             }
         }
         #endregion

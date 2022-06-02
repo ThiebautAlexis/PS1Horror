@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8097caf80ddaab4b889aaf9e80b4682, type: 3}
+  m_Script: {fileID: 11500000, guid: 5125e64c27e0bec4fa2e1d506207b050, type: 3}
   m_Name: EnhancedEditor.AttributeSample.EnhancedEditorAdvancedAttributeSample
   m_EditorClassIdentifier: 
   targetTypeName: EnhancedEditor.AttributeSample.EnhancedEditorAdvancedAttributeSample,
