@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6541543052141451611}
-  - component: {fileID: 6807341098814835968}
   - component: {fileID: 2910941411253389163}
+  - component: {fileID: 4824412821080915340}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
@@ -33,24 +33,6 @@ Transform:
   m_Father: {fileID: 5966073075004006790}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &6807341098814835968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3382345212563084109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 877eb788512e6904897eca70a462a2c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  comment: 
-  Tags:
-    Tags: []
-  lastModifiedBy: CKG_Alexis
-  lastModifiedDate: 01/06/2022 16:36:13
-  IsPersistent: 0
 --- !u!108 &2910941411253389163
 Light:
   m_ObjectHideFlags: 0
@@ -113,6 +95,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &4824412821080915340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3382345212563084109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &6632837653690649955
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6632837653690649952}
-  - component: {fileID: 6632837653690649958}
+  - component: {fileID: 3619088393411484807}
   - component: {fileID: 6632837653690649962}
   - component: {fileID: 6632837653690649959}
   - component: {fileID: 6632837653690649953}
@@ -152,7 +154,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6632837653690649958
+--- !u!114 &3619088393411484807
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,14 +163,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6632837653690649955}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 877eb788512e6904897eca70a462a2c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 378875c9daf3c7145b8108c8a4513da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   comment: 
   Tags:
     Tags: []
-  lastModifiedBy: CKG_Alexis
-  lastModifiedDate: 01/06/2022 17:34:29
+  lastModifiedBy: C
+  lastModifiedDate: 03/06/2022 16:33:49
   IsPersistent: 0
 --- !u!114 &6632837653690649962
 MonoBehaviour:
@@ -183,7 +185,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
-  inputs: {fileID: 11400000, guid: c057e5eac8ac61545b2fe5657a9415de, type: 2}
   inputActionAsset: {fileID: -944628639613478452, guid: 28c65cef49bd2d841a00bd00a2d201bf, type: 3}
   torchlight: {fileID: 6632837653690649953}
   playerMovable: {fileID: 6632837653690649959}
@@ -191,8 +192,9 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 65
-  useDirectionFromCamera: 0
-  currentCamera: {fileID: 0}
+  useDirectionFromCamera: 1
+  playerAttributes: {fileID: 11400000, guid: 89cd9b19c2d91144e88ff1a4637b5105, type: 2}
+  staminaGauge: {fileID: 0}
 --- !u!114 &6632837653690649959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,7 +280,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6632837654539288112}
-  - component: {fileID: 6632837654539288113}
   m_Layer: 0
   m_Name: Root Motion
   m_TagString: Untagged
@@ -301,24 +302,6 @@ Transform:
   m_Father: {fileID: 6632837653690649952}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6632837654539288113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6632837654539288115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 877eb788512e6904897eca70a462a2c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  comment: 
-  Tags:
-    Tags: []
-  lastModifiedBy: CKG_Alexis
-  lastModifiedDate: 01/06/2022 12:38:05
-  IsPersistent: 0
 --- !u!1001 &8523248983861833311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -394,7 +377,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Steeven
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -437272178767290653, guid: fa3019b973362334a96d426f1fab9ad0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fa3019b973362334a96d426f1fab9ad0, type: 3}
 --- !u!4 &360127120650659587 stripped
 Transform:
