@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6541543052141451611}
   - component: {fileID: 2910941411253389163}
-  - component: {fileID: 4824412821080915340}
+  - component: {fileID: 8934009767503688030}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
@@ -95,7 +95,7 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &4824412821080915340
+--- !u!114 &8934009767503688030
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6632837653690649952}
-  - component: {fileID: 3619088393411484807}
+  - component: {fileID: 2579304247123510201}
   - component: {fileID: 6632837653690649962}
   - component: {fileID: 6632837653690649959}
   - component: {fileID: 6632837653690649953}
@@ -154,7 +154,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3619088393411484807
+--- !u!114 &2579304247123510201
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,8 +169,8 @@ MonoBehaviour:
   comment: 
   Tags:
     Tags: []
-  lastModifiedBy: C
-  lastModifiedDate: 03/06/2022 16:33:49
+  lastModifiedBy: CKG_Alexis
+  lastModifiedDate: 03/06/2022 17:40:39
   IsPersistent: 0
 --- !u!114 &6632837653690649962
 MonoBehaviour:
@@ -192,7 +192,7 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 65
-  useDirectionFromCamera: 1
+  useDirectionFromCamera: 0
   playerAttributes: {fileID: 11400000, guid: 89cd9b19c2d91144e88ff1a4637b5105, type: 2}
   staminaGauge: {fileID: 0}
 --- !u!114 &6632837653690649959

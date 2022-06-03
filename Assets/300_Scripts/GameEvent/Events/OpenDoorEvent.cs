@@ -10,7 +10,7 @@ namespace HorrorPS1
         //[SerializeField] private SceneData targetSceneData = null;
         //[SerializeField] private int UnlockedIndex = -1;
 
-        public override void CallEvent()
+        public override void CallEvent(GameEventTrigger _trigger)
         {
             Debug.Log("Implement behaviour here");
         }

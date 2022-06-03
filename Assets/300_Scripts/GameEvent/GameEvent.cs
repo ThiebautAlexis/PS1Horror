@@ -7,7 +7,7 @@ namespace HorrorPS1
     public abstract class GameEvent : ScriptableObject
     {
         #region Methods
-        public abstract void CallEvent();
+        public abstract void CallEvent(GameEventTrigger _trigger);
         #endregion
     }
 

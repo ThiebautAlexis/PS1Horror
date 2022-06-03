@@ -123,7 +123,7 @@ namespace HorrorPS1
             {
                 sprintTimer = Mathf.Max(0, sprintTimer - Time.deltaTime);
             }
-            staminaGauge.fillAmount =  Mathf.MoveTowards(staminaGauge.fillAmount, 1f - (sprintTimer / playerAttributes.SprintLimit), Time.deltaTime);
+            // staminaGauge.fillAmount =  Mathf.MoveTowards(staminaGauge.fillAmount, 1f - (sprintTimer / playerAttributes.SprintLimit), Time.deltaTime);
         }
 
         private void SetCurrentCamera(Cinemachine.CinemachineVirtualCamera _cam)

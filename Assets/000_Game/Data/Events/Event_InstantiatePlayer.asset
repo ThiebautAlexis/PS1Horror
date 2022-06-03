@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2e6ff10d80e0474daa9c7b054396bf8, type: 3}
-  m_Name: SceneData_AlexisScene
+  m_Script: {fileID: 11500000, guid: 66c84581374d64a4fa72e51729732492, type: 3}
+  m_Name: Event_InstantiatePlayer
   m_EditorClassIdentifier: 
-  LinkedScenes:
-  - guid: dfa310d555bb12644887e313954b56ab
-  - guid: 5baf8bdcd50030f4f9efd1be21306746
-  ModifiersValue: 0
-  openedDoors: -1
+  instantiedPrefab: {fileID: 6632837653690649955, guid: b0ab65f05781b0941b694e8a87aa9f42, type: 3}

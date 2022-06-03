@@ -264,6 +264,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2518926778290972654, guid: c07e1ce96d3e1354d9ff94bf5c14a2f4, type: 3}
+      propertyPath: sceneCameras.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518926778290972654, guid: c07e1ce96d3e1354d9ff94bf5c14a2f4, type: 3}
+      propertyPath: sceneCameras.Array.data[0]
+      value: 
+      objectReference: {fileID: 957247821}
+    - target: {fileID: 9114700467918749316, guid: c07e1ce96d3e1354d9ff94bf5c14a2f4, type: 3}
+      propertyPath: lastModifiedDate
+      value: 03/06/2022 17:22:38
+      objectReference: {fileID: 0}
     - target: {fileID: 9114700467997385305, guid: c07e1ce96d3e1354d9ff94bf5c14a2f4, type: 3}
       propertyPath: m_Name
       value: SCENE_DATA - Prefab
@@ -314,3 +326,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c07e1ce96d3e1354d9ff94bf5c14a2f4, type: 3}
+--- !u!114 &957247821 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7270560161302538872, guid: c07e1ce96d3e1354d9ff94bf5c14a2f4, type: 3}
+  m_PrefabInstance: {fileID: 957247820}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
