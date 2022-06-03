@@ -1,6 +1,7 @@
 using EnhancedEditor;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Cinemachine;
 
 namespace HorrorPS1
@@ -14,6 +15,11 @@ namespace HorrorPS1
         #endregion
 
         #region Methods 
+        private void OnEnable()
+        {
+            OnEnterScene();
+        }
+
         public void OnEnterScene(int _cameraIndex = 0)
         {
             for (int i = 0; i < modifiers.Length; i++)
@@ -23,22 +29,80 @@ namespace HorrorPS1
             GameState.ChangeCamera(sceneCameras[_cameraIndex]);
         }
 
-        [Button("test")]
-        public void OnExitScene(OpenDoors _door)
+        public void ExitScene(OpenDoors _door)
         {
-            if ((sceneData.openedDoors & _door) > 0)
+            if ((sceneData.openedDoors & _door) > 0 )
             {
-                Debug.Log("oui");
+                SceneAsset _loadedScene = null;
+                switch (_door)
+                {
+                    case OpenDoors.One:
+                        if (sceneData.LinkedScenes.Length > 0)
+                            _loadedScene = sceneData.LinkedScenes[0];
+                        break;
+                    case OpenDoors.Two:
+                        if (sceneData.LinkedScenes.Length > 1)
+                            _loadedScene = sceneData.LinkedScenes[1];
+                        break;
+                    case OpenDoors.Three:
+                        if (sceneData.LinkedScenes.Length > 2)
+                            _loadedScene = sceneData.LinkedScenes[1];
+                        break;
+                    case OpenDoors.Four:
+                        if (sceneData.LinkedScenes.Length > 3)
+                            _loadedScene = sceneData.LinkedScenes[3];
+                        break;
+                    case OpenDoors.Five:
+                        if (sceneData.LinkedScenes.Length > 4)
+                            _loadedScene = sceneData.LinkedScenes[4];
+                        break;
+                    case OpenDoors.Six:
+                        if (sceneData.LinkedScenes.Length > 5)
+                            _loadedScene = sceneData.LinkedScenes[5];
+                        break;
+                    case OpenDoors.Seven:
+                        if (sceneData.LinkedScenes.Length > 6)
+                            _loadedScene = sceneData.LinkedScenes[6];
+                        break;
+                    case OpenDoors.Eight:
+                        if (sceneData.LinkedScenes.Length > 7)
+                            _loadedScene = sceneData.LinkedScenes[7];
+                        break;
+                    case OpenDoors.Nine:
+                        if (sceneData.LinkedScenes.Length > 8)
+                            _loadedScene = sceneData.LinkedScenes[8];
+                        break;
+                    default:
+                        break;
+                }
+                if(_loadedScene != null)
+                {
+                    LoadingSceneAsyncOperation _operation = new LoadingSceneAsyncOperation(_loadedScene);
+                    _operation.OnSceneLoaded += UnloadThisScene;                    
+                    return;
+                }
             }
+            Debug.Log("It's locked!");
+            // UI Feedback here
             //sceneData.openedDoors
         }
 
-        [Button("Aquamarine")]
+        private void UnloadThisScene(SceneAsset _loadedScene)
+        {           
+            SceneManager.UnloadSceneAsync(gameObject.scene);
+        }
+
         public void SetCamera(int _cameraIndex)
         {
             GameState.ChangeCamera(sceneCameras[_cameraIndex]);
         }
 
+        [SerializeField] OpenDoors door;
+        [Button]
+        void LoadScene()
+        {
+            ExitScene(door);
+        }
         #endregion
     }
 
@@ -47,5 +111,33 @@ namespace HorrorPS1
     {
         public Transform ModifierTransform = null;
         public float ModifierThreshold = 0.0f;
+    }
+
+    public class LoadingSceneAsyncOperation : AsyncOperation
+    {
+        private AsyncOperation currentOperation = null;
+        private SceneAsset loadedScene;
+        public event Action<SceneAsset> OnSceneLoaded = null;
+
+        public LoadingSceneAsyncOperation(SceneAsset _loadedScene)
+        {
+            loadedScene = _loadedScene;
+            LoadSceneParameters _params = new LoadSceneParameters()
+            {
+                loadSceneMode = LoadSceneMode.Additive
+            };
+
+            // Launch Scene Loading
+            if(loadedScene.LoadAsync(_params, out currentOperation))
+            {
+                currentOperation.completed += OnOperationCompleted;
+            }
+        }
+
+
+        private void OnOperationCompleted(AsyncOperation operation)
+        {
+            OnSceneLoaded?.Invoke(loadedScene);
+        }
     }
 }

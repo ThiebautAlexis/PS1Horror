@@ -8,7 +8,7 @@ namespace HorrorPS1
     public class SceneData : ScriptableObject
     {
         #region Content
-        public SceneBundle LinkedScenes = null;
+        public SceneAsset[] LinkedScenes = new SceneAsset[] { };
         [Enhanced, ReadOnly] public float ModifiersValue = 0f;
         public OpenDoors openedDoors;
         #endregion
