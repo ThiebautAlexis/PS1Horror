@@ -1,48 +1,105 @@
-using Cinemachine;
 using EnhancedEditor;
 using System;
 using UnityEngine;
 
 namespace HorrorPS1
 {
-    public class SceneData : MonoBehaviour
+    [CreateAssetMenu(fileName = "SceneData_", menuName = "PS1 Horror Game/Scene Data", order = 150)]
+    public class SceneData : ScriptableObject
     {
-        #region Fields and Properties
-        [SerializeField] private SceneBundle linkedScenes = null;
-        [SerializeField] private CinemachineVirtualCamera[] sceneCameras = new CinemachineVirtualCamera[] { };
-        [SerializeField] private SceneModifier[] modifiers = new SceneModifier[] { };
-        [SerializeField, Enhanced, ReadOnly] private float modifiersValue = 0f;
+        #region Content
+        public SceneBundle LinkedScenes = null;
+        [Enhanced, ReadOnly] public float ModifiersValue = 0f;
+        public OpenDoors openedDoors;
         #endregion
 
-        #region Methods 
-        public void OnEnterScene(int _cameraIndex = 0)
+        [Button("Unlock Door at index")]
+        public void UnlockDoor(int _unlockedIndex)
         {
-            for (int i = 0; i < modifiers.Length; i++)
+            switch (_unlockedIndex)
             {
-                modifiers[i].ModifierTransform.gameObject.SetActive(modifiersValue > modifiers[i].ModifierThreshold);
+                case 1:
+                    openedDoors = openedDoors | OpenDoors.One;
+                    break;
+                case 2:
+                    openedDoors = openedDoors | OpenDoors.Two;
+                    break;
+                case 3:
+                    openedDoors = openedDoors | OpenDoors.Three;
+                    break;
+                case 4:
+                    openedDoors = openedDoors | OpenDoors.Four;
+                    break;
+                case 5:
+                    openedDoors = openedDoors | OpenDoors.Five;
+                    break;
+                case 6:
+                    openedDoors = openedDoors | OpenDoors.Six;
+                    break;
+                case 7:
+                    openedDoors = openedDoors | OpenDoors.Seven;
+                    break;
+                case 8:
+                    openedDoors = openedDoors | OpenDoors.Eight;
+                    break;
+                case 9:
+                    openedDoors = openedDoors | OpenDoors.Nine;
+                    break;
+                default:
+                    break;
             }
-            GameState.ChangeCamera(sceneCameras[_cameraIndex]);
-            linkedScenes.LoadAsync();
         }
 
-        public void OnExitScene(int _nextSceneIndex = 0)
+        [Button("Lock Door")]
+        public void LockDoor(int _lockedIndex)
         {
-            linkedScenes.UnloadAsync(_nextSceneIndex);
+            switch (_lockedIndex)
+            {
+                case 1:
+                    openedDoors &= ~OpenDoors.One;
+                    break;
+                case 2:
+                    openedDoors &= ~OpenDoors.Two;
+                    break;
+                case 3:
+                    openedDoors &= ~OpenDoors.Three;
+                    break;
+                case 4:
+                    openedDoors &= ~OpenDoors.Four;
+                    break;
+                case 5:
+                    openedDoors &= ~OpenDoors.Five;
+                    break;
+                case 6:
+                    openedDoors &= ~OpenDoors.Six;
+                    break;
+                case 7:
+                    openedDoors &= ~OpenDoors.Seven;
+                    break;
+                case 8:
+                    openedDoors &= ~OpenDoors.Eight;
+                    break;
+                case 9:
+                    openedDoors &= ~OpenDoors.Nine;
+                    break;
+                default:
+                    break;
+            }
         }
 
-        [Button("Aquamarine")]
-        public void SetCamera(int _cameraIndex)
-        {
-            GameState.ChangeCamera(sceneCameras[_cameraIndex]); 
-        }
-
-        #endregion
     }
 
-    [Serializable]
-    public class SceneModifier
+    [Flags]
+    public enum OpenDoors
     {
-        public Transform ModifierTransform = null;
-        public float ModifierThreshold = 0.0f;
+        One = 1,
+        Two = 2,
+        Three = 4,
+        Four = 8,
+        Five = 16,
+        Six = 32,
+        Seven = 64,
+        Eight = 128,
+        Nine = 256
     }
 }

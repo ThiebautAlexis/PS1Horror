@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9114700467918749317}
   - component: {fileID: 9114700467918749316}
-  - component: {fileID: 9114700467918749318}
+  - component: {fileID: 2518926778290972654}
   m_Layer: 0
   m_Name: SCENE_DATA
   m_TagString: Untagged
@@ -95,7 +95,7 @@ MonoBehaviour:
   lastModifiedBy: CKG_Alexis
   lastModifiedDate: 02/06/2022 20:24:13
   IsPersistent: 0
---- !u!114 &9114700467918749318
+--- !u!114 &2518926778290972654
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,14 +104,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 9114700467918749339}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2e6ff10d80e0474daa9c7b054396bf8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7386b4668273b8146a7c129f8da39d2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linkedScenes: {fileID: 0}
-  sceneCameras:
-  - {fileID: 0}
+  sceneData: {fileID: 0}
+  sceneCameras: []
   modifiers: []
-  modifiersValue: 0
 --- !u!1 &9114700467997385305
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,13 +11,6 @@ namespace HorrorPS1
         #endregion
     }
 
-    [CreateAssetMenu(fileName = "Event_", menuName = "PS1 Horror Game/Events/Open door Event", order = 150)]
-    public class OpenDoorEvent : GameEvent
-    {
-        public override void CallEvent()
-        {
-            Debug.Log("Implement behaviour here");
-        }
-    }
+
 
 }
