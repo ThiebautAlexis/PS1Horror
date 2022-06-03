@@ -5,7 +5,7 @@ using HorrorPS1.Movable;
 
 namespace HorrorPS1
 {
-    [CreateAssetMenu(fileName = "Character Movable Attribute", menuName = "PS1 Horror Game/Data/Character Movable Attributes", order = 150 )] 
+    [CreateAssetMenu(fileName = "Character Movable Attribute", menuName = "PS1 Horror Game/Player/Character Movable Attributes", order = 150 )] 
     public class CharacterMovableAttributes : MovableAttributes
     {
         #region Fields and Properties

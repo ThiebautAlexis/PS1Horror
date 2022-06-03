@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19ff9f7f2b4b7542b25e7da72aea6a7, type: 3}
   m_Name: Character Movable Attribute
   m_EditorClassIdentifier: 
-  _speedRange: {x: 0, y: 5}
+  _speedRange: {x: 1, y: 4}
   speedDuration: 0.7
   speedCurve:
     serializedVersion: 2

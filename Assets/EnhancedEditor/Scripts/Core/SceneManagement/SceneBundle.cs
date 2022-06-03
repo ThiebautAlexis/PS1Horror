@@ -119,7 +119,31 @@ namespace EnhancedEditor
 
             UnloadBundleAsyncOperation _operation = new UnloadBundleAsyncOperation(this, _options);
             return _operation;
+        }        
+        
+        /// <summary>
+        /// Destroys all <see cref="GameObject"/> associated with this scene and remove it from the <see cref="SceneManager"/>.
+        /// </summary>
+        /// <returns><see cref="UnloadBundleAsyncOperation"/> used to determine when the operation has completed.</returns>
+        public UnloadBundleAsyncOperation UnloadAsync(int _skippedSceneIndex)
+        {
+            UnloadSceneOptions _options = UnloadSceneOptions.None;
+            return UnloadAsync(_skippedSceneIndex, _options);
         }
+
+        /// <param name="_options">Scene unloading options.</param>
+        /// <inheritdoc cref="UnloadAsync()"/>
+        [Button(ActivationMode.Play, SuperColor.Crimson, IsDrawnOnTop = false)]
+        public UnloadBundleAsyncOperation UnloadAsync(int _skippedSceneIndex,  UnloadSceneOptions _options)
+        {
+            if (Scenes.Length == 0)
+                return new UnloadBundleAsyncOperation();
+
+            UnloadBundleAsyncOperation _operation = new UnloadBundleAsyncOperation(this, _skippedSceneIndex, _options);
+            return _operation;
+        }
+
+
         #endregion
     }
 }

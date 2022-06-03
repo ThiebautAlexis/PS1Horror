@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace HorrorPS1
 {
-    [CreateAssetMenu(fileName = "TorchLightData", menuName = "PS1 Horror Game/Data/Player/Torchlight", order = 150)]
+    [CreateAssetMenu(fileName = "TorchLightData", menuName = "PS1 Horror Game/Player/Torchlight", order = 150)]
     public class TorchLightData : ScriptableObject
     {
         #region Content
