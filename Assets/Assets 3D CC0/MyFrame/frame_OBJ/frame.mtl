@@ -1,0 +1,100 @@
+# Blender MTL File: 'None'
+# Material Count: 9
+
+newmtl FrontColor
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Material2
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.294118 0.419608 0.388235
+Ks 0.330000 0.330000 0.330000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd /home/crookedmouth/Documents/frame001/Material2.jpg
+
+newmtl Wood_Cherry_Original
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.329412 0.184314 0.090196
+Ks 0.330000 0.330000 0.330000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd /home/crookedmouth/Documents/frame001/Wood_Cherry_Original.jpg
+
+newmtl Wood_Cherry_Original1_
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.329412 0.184314 0.090196
+Ks 0.330000 0.330000 0.330000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd /home/crookedmouth/Documents/frame001/Wood_Cherry_Original1_.jpg
+
+newmtl Wood_Cherry_Original2_
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.329412 0.184314 0.090196
+Ks 0.330000 0.330000 0.330000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd /home/crookedmouth/Documents/frame001/Wood_Cherry_Original2_.jpg
+
+newmtl Wood_Cherry_Original3_
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.329412 0.184314 0.090196
+Ks 0.330000 0.330000 0.330000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd /home/crookedmouth/Documents/frame001/Wood_Cherry_Original3_.jpg
+
+newmtl Wood_Cherry_Original4_
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.329412 0.184314 0.090196
+Ks 0.330000 0.330000 0.330000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd /home/crookedmouth/Documents/frame001/Wood_Cherry_Original4_.jpg
+
+newmtl Wood_Cherry_Original5_
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.329412 0.184314 0.090196
+Ks 0.330000 0.330000 0.330000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd /home/crookedmouth/Documents/frame001/Wood_Cherry_Original5_.jpg
+
+newmtl Wood_Cherry_Original6_
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.329412 0.184314 0.090196
+Ks 0.330000 0.330000 0.330000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd /home/crookedmouth/Documents/frame001/Wood_Cherry_Original6_.jpg
