@@ -4,14 +4,23 @@ using UnityEngine;
 
 namespace HorrorPS1
 {
-    public class GameEventTrigger : MonoBehaviour
+    public abstract class GameEventTrigger : MonoBehaviour
     {
         #region Fields and Properties
-        [SerializeField] private GameEvent[] events = new GameEvent[] { }; 
+        [SerializeField] protected bool isTriggeredOnce = true;
+        [SerializeField] protected GameEvent[] events = new GameEvent[] { }; 
         #endregion
 
         #region Methods 
-
+        protected void TriggerEvents()
+        {
+            for (int i = 0; i < events.Length; i++)
+            {
+                events[i].CallEvent(this);
+            }
+            if (isTriggeredOnce)
+                enabled = false;
+        }
         #endregion
     }
 }

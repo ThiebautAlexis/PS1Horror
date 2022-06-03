@@ -110,6 +110,7 @@ MonoBehaviour:
   sceneData: {fileID: 0}
   sceneCameras: []
   modifiers: []
+  door: 0
 --- !u!1 &9114700467997385305
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +213,7 @@ MonoBehaviour:
   Tags:
     Tags: []
   lastModifiedBy: CKG_Alexis
-  lastModifiedDate: 02/06/2022 23:16:55
+  lastModifiedDate: 03/06/2022 17:12:00
   IsPersistent: 0
 --- !u!114 &7270560161302538872
 MonoBehaviour:
@@ -221,7 +222,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9114700468879377352}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
