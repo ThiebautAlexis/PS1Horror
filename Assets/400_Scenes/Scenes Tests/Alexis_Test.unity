@@ -602,7 +602,7 @@ MonoBehaviour:
   Tags:
     Tags: []
   lastModifiedBy: CKG_Alexis
-  lastModifiedDate: 03/06/2022 17:40:08
+  lastModifiedDate: 03/06/2022 20:05:58
   IsPersistent: 0
 --- !u!4 &665376489
 Transform:
@@ -612,7 +612,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665376487}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6438046, y: -0.100999594, z: -6.91}
+  m_LocalPosition: {x: -1.6438046, y: 0.25, z: -15.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -634,6 +634,10 @@ MonoBehaviour:
   isTriggeredOnce: 1
   events:
   - {fileID: 11400000, guid: 34e2fe975a80756479dcca3344a2e5ae, type: 2}
+  sceneEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  conditions: 0
 --- !u!1 &666019777
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,7 +653,6 @@ GameObject:
   - component: {fileID: 666019778}
   - component: {fileID: 666019784}
   - component: {fileID: 666019783}
-  - component: {fileID: 666019786}
   m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
@@ -782,19 +785,6 @@ MonoBehaviour:
   lastModifiedBy: CKG_Alexis
   lastModifiedDate: 02/06/2022 20:34:05
   IsPersistent: 0
---- !u!114 &666019786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 666019777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baec580eb1820364b960b7378b849d11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  events: []
 --- !u!1001 &924510024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -816,15 +806,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2518926778290972654, guid: c07e1ce96d3e1354d9ff94bf5c14a2f4, type: 3}
       propertyPath: sceneCameras.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2518926778290972654, guid: c07e1ce96d3e1354d9ff94bf5c14a2f4, type: 3}
       propertyPath: sceneCameras.Array.data[0]
       value: 
-      objectReference: {fileID: 1089155597}
+      objectReference: {fileID: 218703106}
+    - target: {fileID: 2518926778290972654, guid: c07e1ce96d3e1354d9ff94bf5c14a2f4, type: 3}
+      propertyPath: sceneCameras.Array.data[1]
+      value: 
+      objectReference: {fileID: 327986897}
     - target: {fileID: 9114700467918749316, guid: c07e1ce96d3e1354d9ff94bf5c14a2f4, type: 3}
       propertyPath: lastModifiedDate
-      value: 03/06/2022 17:22:11
+      value: 03/06/2022 20:14:27
       objectReference: {fileID: 0}
     - target: {fileID: 9114700467997385305, guid: c07e1ce96d3e1354d9ff94bf5c14a2f4, type: 3}
       propertyPath: m_Name
@@ -878,6 +872,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9114700468879377333, guid: c07e1ce96d3e1354d9ff94bf5c14a2f4, type: 3}
+      propertyPath: lastModifiedDate
+      value: 03/06/2022 20:14:27
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114700468879377352, guid: c07e1ce96d3e1354d9ff94bf5c14a2f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c07e1ce96d3e1354d9ff94bf5c14a2f4, type: 3}
 --- !u!1 &1035626164
@@ -924,17 +926,88 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1089155597 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7270560161302538872, guid: c07e1ce96d3e1354d9ff94bf5c14a2f4, type: 3}
-  m_PrefabInstance: {fileID: 924510024}
+--- !u!1 &1063379294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1063379297}
+  - component: {fileID: 1063379296}
+  - component: {fileID: 1063379295}
+  m_Layer: 0
+  m_Name: 'Debug Event '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1063379295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063379294}
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Script: {fileID: 11500000, guid: 02d3d38c33d7c504281ac189586cd1d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTriggeredOnce: 1
+  events:
+  - {fileID: 11400000, guid: bfc51e74f493194479199b42152c6d9d, type: 2}
+  sceneEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1947537332}
+        m_TargetAssemblyTypeName: HorrorPS1.SceneDataHandler, HorrorPS1
+        m_MethodName: SetCamera
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  conditions: 0
+--- !u!114 &1063379296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063379294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378875c9daf3c7145b8108c8a4513da0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comment: 
+  Tags:
+    Tags: []
+  lastModifiedBy: CKG_Alexis
+  lastModifiedDate: 03/06/2022 20:07:53
+  IsPersistent: 0
+--- !u!4 &1063379297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063379294}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.6438046, y: -0.100999594, z: -6.91}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1365581898
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,3 +1240,110 @@ MonoBehaviour:
   lastModifiedBy: CKG_Alexis
   lastModifiedDate: 02/06/2022 18:50:33
   IsPersistent: 0
+--- !u!1 &1795422216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1795422219}
+  - component: {fileID: 1795422218}
+  - component: {fileID: 1795422217}
+  - component: {fileID: 1795422220}
+  m_Layer: 9
+  m_Name: Trigger Event
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1795422217
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795422216}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.5700426, y: 3.9113169, z: 5.360651}
+  m_Center: {x: -0.97737074, y: -0.4262433, z: 0.9136362}
+--- !u!114 &1795422218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795422216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378875c9daf3c7145b8108c8a4513da0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comment: 
+  Tags:
+    Tags: []
+  lastModifiedBy: CKG_Alexis
+  lastModifiedDate: 03/06/2022 20:14:33
+  IsPersistent: 0
+--- !u!4 &1795422219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795422216}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.74, y: 0.37, z: -8.16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1795422220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795422216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e124fa098f45c8749bbcfa9a5447b056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTriggeredOnce: 1
+  events: []
+  sceneEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1947537332}
+        m_TargetAssemblyTypeName: HorrorPS1.SceneDataHandler, HorrorPS1
+        m_MethodName: SetCamera
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  conditions: 0
+  activationState: 1
+--- !u!114 &1947537332 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2518926778290972654, guid: c07e1ce96d3e1354d9ff94bf5c14a2f4, type: 3}
+  m_PrefabInstance: {fileID: 924510024}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7386b4668273b8146a7c129f8da39d2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

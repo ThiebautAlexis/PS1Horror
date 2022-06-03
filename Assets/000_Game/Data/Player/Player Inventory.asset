@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcb518c4694258447b09325bba786efb, type: 3}
-  m_Name: Event_OpenBathroomDoor
+  m_Script: {fileID: 11500000, guid: d32f3b2aae548354c84c2da5e6ba6cc3, type: 3}
+  m_Name: Player Inventory
   m_EditorClassIdentifier: 
-  unlockedIndex: -1
-  targetSceneData: {fileID: 11400000, guid: 32efba494f7d87c45800c4dc01d51c1c, type: 2}

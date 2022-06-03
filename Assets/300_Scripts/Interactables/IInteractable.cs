@@ -6,7 +6,6 @@ namespace HorrorPS1
 {
     public interface IInteractable
     {
-        public void CancelInteraction();
         public void Interact();
     }
 }

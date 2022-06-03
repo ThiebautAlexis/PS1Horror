@@ -11,7 +11,6 @@ namespace HorrorPS1
         [SerializeField, Enhanced, Required] private new Light light = null;
         [SerializeField, Enhanced, Required] private TorchLightData data = null;
         private Sequence focusingSequence = null;
-        [SerializeField, ReadOnly] private bool canInteract = false;
 
         private IInteractable currentInteractable = null;
         private static readonly RaycastHit[] interactionArray = new RaycastHit[1];
@@ -34,7 +33,6 @@ namespace HorrorPS1
 
             void OnComplete()
             {
-                canInteract = true;
                 /// Add Callbacks here.
             }
         }
@@ -42,7 +40,6 @@ namespace HorrorPS1
         [Button(SuperColor.Red)]
         public void UnfocusTorchLight()
         {
-            canInteract = false;
             if(focusingSequence.IsActive())
             {
                 focusingSequence.Kill(false);
@@ -54,21 +51,32 @@ namespace HorrorPS1
             };
         }
 
-        public bool CastInteraction(out IInteractable _interactable)
+        private bool CastInteraction(out IInteractable _interactable)
         {
 #if UNITY_EDITOR
-            Debug.DrawRay(light.transform.position, light.transform.forward * light.range, Color.yellow);
+            Debug.DrawRay(light.transform.position, light.transform.forward, Color.yellow);
 #endif
-            int _amount = Physics.RaycastNonAlloc(light.transform.position, light.transform.forward, interactionArray, light.range , data.InteractionLayer);
+            int _amount = Physics.RaycastNonAlloc(light.transform.position, light.transform.forward, interactionArray, 1f , data.InteractionLayer);
             if(_amount > 0)
+            {
                 return interactionArray[0].collider.TryGetComponent(out _interactable);
+            }
             _interactable = null;
             return false;
 
         }
+
+        public void TryInteraction()
+        {
+            if (CastInteraction(out IInteractable _interactable))
+            {
+                _interactable.Interact();
+            }
+        }
         
         private void Update()
         {
+            /*
             if(canInteract && CastInteraction(out IInteractable _interactable))
             {
                 if (_interactable == currentInteractable)
@@ -86,6 +94,7 @@ namespace HorrorPS1
                 currentInteractable.CancelInteraction();
                 currentInteractable = null;
             }
+            */
         }
         #endregion
     }

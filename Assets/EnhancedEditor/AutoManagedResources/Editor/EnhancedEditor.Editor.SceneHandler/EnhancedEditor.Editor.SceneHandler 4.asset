@@ -10,14 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e405b71fa79fe2d4495d544ba41f8253, type: 3}
-  m_Name: EnhancedEditor.Editor.SceneHandler 2
+  m_Name: EnhancedEditor.Editor.SceneHandler 4
   m_EditorClassIdentifier: 
   sceneGroups:
   - Name: Default Group
     Scenes:
-    - GUID: f154c191265dddb48a9de44305dc971a
     - GUID: e026d555eae824f65922633f37a14385
-    - GUID: 18c1a57bbf0c9184c841b4e3837d2552
     - GUID: b2e6d86bc4a6a714586e4a1828a5e79d
     - GUID: 99c9720ab356a0642a771bea13969a05
     - GUID: 675c32bc094caaf488fef808cf056c6e
@@ -31,8 +29,6 @@ MonoBehaviour:
     - GUID: 74717ff5a2a779343ade44d734abede1
     - GUID: 9154e7a0f8a0e3d4db7db90c0cf3ddb3
     - GUID: e9017d5f96b9f09489b4b37e1d6eb914
-    - GUID: dfa310d555bb12644887e313954b56ab
-    - GUID: 5baf8bdcd50030f4f9efd1be21306746
     - GUID: 5cae0d87369a2405eaa962b8d920b947
   bundleGroups:
   - Name: Default Group

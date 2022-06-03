@@ -96,13 +96,6 @@ namespace HorrorPS1
         {
             GameState.ChangeCamera(sceneCameras[_cameraIndex]);
         }
-
-        [SerializeField] OpenDoors door;
-        [Button]
-        void LoadScene()
-        {
-            ExitScene(door);
-        }
         #endregion
     }
 

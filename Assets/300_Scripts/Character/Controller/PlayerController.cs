@@ -20,6 +20,7 @@ namespace HorrorPS1
         private static readonly string lookActionPath = "Player/Look";
         private static readonly string interactActionPath = "Player/Interact";
         private static readonly string sprintActionPath = "Player/Sprint";
+        private static readonly string focusActionPath = "Player/Focus";
 
         private static readonly int speed_Hash = Animator.StringToHash("Speed");
         private static readonly int look_Hash = Animator.StringToHash("Look");
@@ -33,6 +34,7 @@ namespace HorrorPS1
         private InputAction lookAction = null;
         private InputAction interactAction = null;
         private InputAction sprintAction = null;
+        private InputAction focusAction = null;
 
         [Section("Components ")]
         [SerializeField] private CharacterTorchlight torchlight = null;
@@ -47,9 +49,6 @@ namespace HorrorPS1
 
         [Section("Attributes")]
         [SerializeField, Enhanced] private PlayerAttributes playerAttributes = null;
-
-        [Section("UI")]
-        [SerializeField, Enhanced] private UnityEngine.UI.Image staminaGauge = null;
 
         private bool isSprinting = false;
         private float sprintTimer = 0f;
@@ -72,8 +71,11 @@ namespace HorrorPS1
             interactAction.Enable();
             sprintAction = inputActionAsset.FindAction(sprintActionPath, true);
             sprintAction.Enable();
+            focusAction = inputActionAsset.FindAction(focusActionPath, true);
+            focusAction.Enable();
 
             GameState.OnCameraChange += SetCurrentCamera;
+            SetCurrentCamera(GameState.CurrentCamera);
         }
 
         protected override void OnDeactivation()
@@ -84,7 +86,7 @@ namespace HorrorPS1
             lookAction.Disable();
             interactAction.Disable();
             sprintAction.Disable();
-
+            focusAction.Disable();
 
             GameState.OnCameraChange -= SetCurrentCamera;
         }
@@ -103,10 +105,14 @@ namespace HorrorPS1
             ApplySprint();
 
 
-            if (interactAction.WasPressedThisFrame())
+            if (focusAction.WasPressedThisFrame())
                 torchlight.FocusTorchLight();
-            else if (interactAction.WasReleasedThisFrame())
+            else if (focusAction.WasReleasedThisFrame())
                 torchlight.UnfocusTorchLight();
+
+            if (interactAction.WasPressedThisFrame())
+                torchlight.TryInteraction();
+
         }
 
         private void ApplySprint()

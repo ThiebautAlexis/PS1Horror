@@ -24,7 +24,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Interact",
+                    "name": "Focus",
                     "type": "Button",
                     "id": "cf4a1b8f-19c7-49c7-9778-dc14ac1d9bd5",
                     "expectedControlType": "Button",
@@ -36,6 +36,15 @@
                     "name": "Sprint",
                     "type": "Button",
                     "id": "17b6f6f1-c4e9-42ab-b904-f2b1f6646fca",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "bc8f9a24-fe9a-4b24-8cd7-83f861958477",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -215,7 +224,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Interact",
+                    "action": "Focus",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -226,7 +235,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Interact",
+                    "action": "Focus",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -237,7 +246,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Touch",
-                    "action": "Interact",
+                    "action": "Focus",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -248,7 +257,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
-                    "action": "Interact",
+                    "action": "Focus",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -259,7 +268,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
-                    "action": "Interact",
+                    "action": "Focus",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -282,6 +291,28 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2ec8c286-5fc3-4825-9db9-fb780001bed2",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2ae878a4-7b03-4cdd-a69f-4d169775cee9",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

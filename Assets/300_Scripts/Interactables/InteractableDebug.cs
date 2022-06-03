@@ -17,24 +17,24 @@ namespace HorrorPS1
 
         void IInteractable.Interact()
         {
-            if (interactionSequence.IsActive())
-                interactionSequence.Kill(false);
-            interactionSequence = DOTween.Sequence();
-            {
-                interactionSequence.Join(DOVirtual.DelayedCall(interactionTimer, ApplyInteraction));
-            }
+            gameObject.SetActive(false);
+            //if (interactionSequence.IsActive())
+            //    interactionSequence.Kill(false);
+            //interactionSequence = DOTween.Sequence();
+            //{
+            //    interactionSequence.Join(DOVirtual.DelayedCall(interactionTimer, ApplyInteraction));
+            //}
 
-            void ApplyInteraction()
-            {
-                gameObject.SetActive(false);
-            }
+            //void ApplyInteraction()
+            //{
+            //}
         }
 
-        void IInteractable.CancelInteraction()
-        {
-            if (interactionSequence.IsActive())
-                interactionSequence.Kill(false);
-        }
+        //void IInteractable.CancelInteraction()
+        //{
+        //    if (interactionSequence.IsActive())
+        //        interactionSequence.Kill(false);
+        //}
         #endregion
     }
 }

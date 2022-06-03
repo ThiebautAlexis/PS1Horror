@@ -8,6 +8,7 @@ namespace HorrorPS1
     public class InstantiateEvent : GameEvent
     {
         #region Fields and Properties
+        [Section("Instantiate Event")]
         [SerializeField] private GameObject instantiedPrefab = null;
         #endregion
 

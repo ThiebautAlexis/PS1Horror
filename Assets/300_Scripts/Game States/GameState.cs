@@ -14,7 +14,9 @@ namespace HorrorPS1
 
         #region Fields and Properties
         public static CinemachineVirtualCamera CurrentCamera = null;
+
         public static float Sanity { get; set; } = 0f;
+        public static ConditionElements FullfilledConditions = 0;
         #endregion
 
         #region Methods 
@@ -26,6 +28,26 @@ namespace HorrorPS1
             OnCameraChange?.Invoke(_newCamera); 
         }
 
+
+        public static void FullfillCondition(ConditionElements _condition)
+        {
+            Debug.Log(FullfilledConditions);
+            FullfilledConditions |= _condition;
+            Debug.Log(FullfilledConditions);
+        }
+        public static void RemoveCondition(ConditionElements _condition) 
+        {
+            FullfilledConditions &= ~_condition;
+        }
+
         #endregion
+    }
+
+    [Flags]
+    public enum ConditionElements
+    {
+        Salt = 1,
+        StaircaseKey = 2,
+        BeenInBedroom = 4
     }
 }

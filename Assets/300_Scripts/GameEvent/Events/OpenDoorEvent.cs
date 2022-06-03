@@ -4,15 +4,16 @@ using UnityEngine;
 
 namespace HorrorPS1
 {
-    [CreateAssetMenu(fileName = "Event_", menuName = "PS1 Horror Game/Events/Open door Event", order = 150)]
+    [CreateAssetMenu(fileName = "OpenDoorEvent_", menuName = "PS1 Horror Game/Events/Open door Event", order = 150)]
     public class OpenDoorEvent : GameEvent
     {
-        //[SerializeField] private SceneData targetSceneData = null;
-        //[SerializeField] private int UnlockedIndex = -1;
+        [Section("Open Door Event")]
+        [SerializeField, Enhanced, EnhancedEditor.Range(-1,9)] private int unlockedIndex = -1;
+        [SerializeField] private SceneData targetSceneData = null;
 
         public override void CallEvent(GameEventTrigger _trigger)
         {
-            Debug.Log("Implement behaviour here");
+            targetSceneData.UnlockDoor(unlockedIndex);
         }
     }
 }
