@@ -8,10 +8,11 @@ namespace HorrorPS1
     public class InteractableDebug : MonoBehaviour, IInteractable
     {
         #region Methods 
+        [SerializeField] private string displayedText = "This is a nice object!";
 
         void IInteractable.Interact()
         {
-            gameObject.SetActive(false);
+            InfoState.DisplayInteractionInfo(displayedText);
         }
         #endregion
     }

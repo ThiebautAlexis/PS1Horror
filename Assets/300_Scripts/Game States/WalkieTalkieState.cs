@@ -6,7 +6,7 @@ namespace HorrorPS1
 {
     public class WalkieTalkieState : GameState
     {
-        public override int Priority { get; protected set; } = 2;
+        public override int Priority { get; protected set; } = 1;
         public override bool isActive { get; set; } = false;
 
         #region Fields and Properties
@@ -16,9 +16,17 @@ namespace HorrorPS1
         #endregion
 
         #region Methods 
-        public static void ReadDialogueLine(DialogueData _line) => OnReadDialogueLine?.Invoke(_line);
+        public static void ReadDialogueLine(DialogueData _line)
+        {
+            OnReadDialogueLine?.Invoke(_line);
+            GameStatesManager.SetStateActivation(GameStatesManager.WalkieTalkieState, true);
+        }
         public static void SkipDialogueLine() => OnSkipDialogueLine?.Invoke();
-        public static void EndDialogue() => OnEndDialogue?.Invoke();
+        public static void EndDialogue()
+        {
+            OnEndDialogue?.Invoke();
+            GameStatesManager.SetStateActivation(GameStatesManager.WalkieTalkieState, false);
+        }
         #endregion
     }
 }

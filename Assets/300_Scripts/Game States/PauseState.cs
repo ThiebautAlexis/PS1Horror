@@ -6,7 +6,7 @@ namespace HorrorPS1
 {
     public class PauseState : GameState
     {
-        public override int Priority { get; protected set; } = 3;
+        public override int Priority { get; protected set; } = 99;
         public override bool isActive { get; set; } = false;
 
 

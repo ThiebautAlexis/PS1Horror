@@ -10,14 +10,16 @@ namespace HorrorPS1
         public static event Action<Type> OnChangeState;
 
 
-        public static readonly Type InGameState = typeof(InGameState); 
-        public static readonly Type WalkieTalkieState = typeof(WalkieTalkieState); 
-        public static readonly Type PauseState = typeof(PauseState); 
+        public static readonly Type InGameState = typeof(InGameState);              // 0
+        public static readonly Type WalkieTalkieState = typeof(WalkieTalkieState);  // 1
+        public static readonly Type InfoState = typeof(InfoState);                  // 2
+        public static readonly Type PauseState = typeof(PauseState);                // 99
 
 
-        private static GameState[] gameStates = new GameState[3]{new InGameState(), 
+        private static GameState[] gameStates = new GameState[]{new InGameState(), 
                                                                 new WalkieTalkieState(), 
-                                                                new PauseState() };
+                                                                new PauseState(),
+                                                                new InfoState()};
 
         public static Type currentGameState;
 

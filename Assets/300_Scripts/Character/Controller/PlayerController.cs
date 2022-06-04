@@ -113,17 +113,19 @@ namespace HorrorPS1
                     torchlight.FocusTorchLight();
                 else if (focusAction.WasReleasedThisFrame())
                     torchlight.UnfocusTorchLight();
-
-                if (interactAction.WasPressedThisFrame())
-                    torchlight.TryInteraction();
                 
-                return;
             }
-            if(GameStatesManager.currentGameState == GameStatesManager.WalkieTalkieState)
+
+            if (interactAction.WasPressedThisFrame())
             {
-                if (interactAction.WasPressedThisFrame())
-                    walkieTalkie.SkipReading();
+                if (GameStatesManager.currentGameState == GameStatesManager.InGameState)
+                    torchlight.TryInteraction();    
+                else if (GameStatesManager.currentGameState == GameStatesManager.WalkieTalkieState)
+                        walkieTalkie.SkipReading();
+                else if(GameStatesManager.currentGameState == GameStatesManager.InfoState)
+                        InfoState.CloseInfo();
             }
+
         }
 
         private void ApplySprint()

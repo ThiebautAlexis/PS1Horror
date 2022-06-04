@@ -8,7 +8,7 @@ namespace HorrorPS1
 {
     public class InGameState : GameState
     {
-        public override int Priority { get; protected set; } = 1;
+        public override int Priority { get; protected set; } = 0;
         public override bool isActive { get; set; } = false;
 
 

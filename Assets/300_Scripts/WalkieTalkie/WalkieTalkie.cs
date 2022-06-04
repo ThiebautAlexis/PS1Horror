@@ -18,7 +18,6 @@ namespace HorrorPS1
         public void StartReading(DialogueData _dialogueAsset)
         {
             // Call Game State
-            GameStatesManager.SetStateActivation(GameStatesManager.WalkieTalkieState, true);
             WalkieTalkieState.ReadDialogueLine(_dialogueAsset);
         }
 

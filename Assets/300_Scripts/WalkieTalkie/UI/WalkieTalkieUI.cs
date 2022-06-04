@@ -22,11 +22,18 @@ namespace HorrorPS1
         #endregion
 
         #region Methods 
-        private void Start()
+        private void OnEnable()
         {
             WalkieTalkieState.OnReadDialogueLine += StartDialogue;
             WalkieTalkieState.OnSkipDialogueLine += Skip;
             GameStatesManager.OnChangeState += CheckStateChange;
+        }
+        
+        private void OnDisable()
+        {
+            WalkieTalkieState.OnReadDialogueLine -= StartDialogue;
+            WalkieTalkieState.OnSkipDialogueLine -= Skip;
+            GameStatesManager.OnChangeState -= CheckStateChange;
         }
 
         private void StartDialogue(DialogueData _dialogueAsset)
@@ -80,7 +87,6 @@ namespace HorrorPS1
         {
             // Call Game State
             WalkieTalkieState.EndDialogue();
-            GameStatesManager.SetStateActivation(GameStatesManager.WalkieTalkieState, false);
         }
 
         private void CheckStateChange(Type _t)
