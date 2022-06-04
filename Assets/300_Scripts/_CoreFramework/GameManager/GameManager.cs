@@ -1,6 +1,7 @@
 ﻿using EnhancedEditor;
 using HorrorPS1.Settings;
 using UnityEngine;
+using HorrorPS1;
 
 using Range = EnhancedEditor.RangeAttribute;
 
@@ -13,6 +14,7 @@ namespace HorrorPS1.Core
 
         [SerializeField, Enhanced, ValidationMember("UseVSync")] private bool useVSync = false;
         [SerializeField, Enhanced, ValidationMember("TargetFramerate"), Range(0f, 200f)] private int targetFramerate = 60;
+        [SerializeField, Enhanced, ValidationMember("Build Scene Database Asset")] private BuildSceneDatabase buildSceneDatabase = null;
 
         public bool UseVSync
         {
@@ -54,6 +56,7 @@ namespace HorrorPS1.Core
         protected virtual void Awake()
         {
             PhysicsSettings.I = gameSettings.PhysicsSettings;
+            BuildSceneDatabase.Database = buildSceneDatabase;
         }
 
         protected virtual void OnApplicationQuit()

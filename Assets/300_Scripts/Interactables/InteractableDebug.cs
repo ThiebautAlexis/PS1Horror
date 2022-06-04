@@ -19,7 +19,6 @@ namespace HorrorPS1
         {
             if (interactionSequence.IsActive())
                 interactionSequence.Kill(false);
-
             interactionSequence = DOTween.Sequence();
             {
                 interactionSequence.Join(DOVirtual.DelayedCall(interactionTimer, ApplyInteraction));
@@ -27,11 +26,11 @@ namespace HorrorPS1
 
             void ApplyInteraction()
             {
-                Debug.Log("Interact");
+                gameObject.SetActive(false);
             }
         }
 
-        public void StopInteraction()
+        void IInteractable.CancelInteraction()
         {
             if (interactionSequence.IsActive())
                 interactionSequence.Kill(false);

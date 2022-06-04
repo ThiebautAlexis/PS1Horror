@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace HorrorPS1
 {
-    [CreateAssetMenu(fileName = "Dialogue_", menuName = "PS1 Horror Game/Data/Dialogue", order = 150)]
+    [CreateAssetMenu(fileName = "Dialogue_", menuName = "PS1 Horror Game/Dialogue", order = 150)]
     public class DialogueData : ScriptableObject
     {
         public DialogueLine[] DialogueLines = new DialogueLine[] { };

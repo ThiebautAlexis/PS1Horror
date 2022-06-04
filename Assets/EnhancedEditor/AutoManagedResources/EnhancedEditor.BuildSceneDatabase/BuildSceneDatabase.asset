@@ -9,17 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a116f5f6681aca94d9282bf8e4227c1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9db055e1c89b2c24a81db49f1b960b8a, type: 3}
   m_Name: BuildSceneDatabase
   m_EditorClassIdentifier: 
-  buildSceneGUIDs: []
+  buildSceneGUIDs:
+  - 18c1a57bbf0c9184c841b4e3837d2552
+  - f154c191265dddb48a9de44305dc971a
+  - dfa310d555bb12644887e313954b56ab
+  - 5baf8bdcd50030f4f9efd1be21306746
   nonBuildScenes:
-  - Name: Alexis_Test
-    GUID: f154c191265dddb48a9de44305dc971a
-  - Name: CoreScene
-    GUID: 18c1a57bbf0c9184c841b4e3837d2552
-  - Name: SampleScene
-    GUID: 9fc0d4010bbf28b4594072e72b8655ab
   - Name: Example_FirstPerson
     GUID: 68360e2d5b8e8d049a057159ed4f9fc6
   - Name: Example_ThirdPerson
@@ -46,3 +44,7 @@ MonoBehaviour:
     GUID: b2e6d86bc4a6a714586e4a1828a5e79d
   - Name: Playground
     GUID: e9017d5f96b9f09489b4b37e1d6eb914
+  - Name: Basic
+    GUID: e026d555eae824f65922633f37a14385
+  - Name: Standard
+    GUID: 5cae0d87369a2405eaa962b8d920b947
