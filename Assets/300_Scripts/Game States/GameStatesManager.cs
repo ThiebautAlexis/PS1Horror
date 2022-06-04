@@ -14,12 +14,15 @@ namespace HorrorPS1
         public static readonly Type WalkieTalkieState = typeof(WalkieTalkieState);  // 1
         public static readonly Type InfoState = typeof(InfoState);                  // 2
         public static readonly Type PauseState = typeof(PauseState);                // 99
+        public static readonly Type LoadingSceneState = typeof(LoadingSceneState);  // 100
+
 
 
         private static GameState[] gameStates = new GameState[]{new InGameState(), 
                                                                 new WalkieTalkieState(), 
                                                                 new PauseState(),
-                                                                new InfoState()};
+                                                                new InfoState(),
+                                                                new LoadingSceneState()};
 
         public static Type currentGameState;
 

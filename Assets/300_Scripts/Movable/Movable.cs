@@ -4,6 +4,7 @@ using HorrorPS1.HorrorPhysics;
 using HorrorPS1.Settings;
 using HorrorPS1.Tools;
 using UnityEngine;
+using HorrorPS1;
 
 namespace HorrorPS1.Movable
 {
@@ -885,6 +886,9 @@ namespace HorrorPS1.Movable
         /// </summary>
         protected virtual void MovableUpdate()
         {
+            if (GameStatesManager.currentGameState != GameStatesManager.InGameState)
+                return;
+
             // Stand object by its parent.
             if (isParented)
                 FollowParent();

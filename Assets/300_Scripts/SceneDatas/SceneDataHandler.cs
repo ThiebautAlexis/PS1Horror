@@ -79,19 +79,12 @@ namespace HorrorPS1
                 }
                 if(_loadedScene != null)
                 {
-                    LoadingSceneAsyncOperation _operation = new LoadingSceneAsyncOperation(_loadedScene);
-                    _operation.OnSceneLoaded += UnloadThisScene;                    
+                    LoadingSceneState.LoadScene(_loadedScene, gameObject.scene);
                     return;
                 }
             }
-            Debug.Log("It's locked!");
             // UI Feedback here
-            //sceneData.openedDoors
-        }
-
-        private void UnloadThisScene(SceneAsset _loadedScene)
-        {           
-            SceneManager.UnloadSceneAsync(gameObject.scene);
+            InfoState.DisplayInteractionInfo("It's locked! But maybe I can find the key.");
         }
 
         public void SetCamera(int _cameraIndex)
@@ -108,31 +101,5 @@ namespace HorrorPS1
         public float ModifierThreshold = 0.0f;
     }
 
-    public class LoadingSceneAsyncOperation : AsyncOperation
-    {
-        private AsyncOperation currentOperation = null;
-        private SceneAsset loadedScene;
-        public event Action<SceneAsset> OnSceneLoaded = null;
-
-        public LoadingSceneAsyncOperation(SceneAsset _loadedScene)
-        {
-            loadedScene = _loadedScene;
-            LoadSceneParameters _params = new LoadSceneParameters()
-            {
-                loadSceneMode = LoadSceneMode.Additive
-            };
-
-            // Launch Scene Loading
-            if(loadedScene.LoadAsync(_params, out currentOperation))
-            {
-                currentOperation.completed += OnOperationCompleted;
-            }
-        }
-
-
-        private void OnOperationCompleted(AsyncOperation operation)
-        {
-            OnSceneLoaded?.Invoke(loadedScene);
-        }
-    }
+   
 }

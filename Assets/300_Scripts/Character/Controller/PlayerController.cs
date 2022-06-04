@@ -45,9 +45,6 @@ namespace HorrorPS1
         [Section("Physics")]
         [SerializeField] private LayerMask collisionMask = 0;
 
-        [Section("Camera")]
-        [SerializeField, Enhanced] private bool useDirectionFromCamera = false;
-
         [Section("Attributes")]
         [SerializeField, Enhanced] private PlayerAttributes playerAttributes = null;
 
@@ -56,6 +53,10 @@ namespace HorrorPS1
         private Vector3 previousMovement = Vector3.zero;
         private Quaternion cameraReferenceRotation = Quaternion.identity;
         private Quaternion referenceRotation = Quaternion.identity;
+
+        private bool hasToSetPosition = false;
+        private Vector3 afterLoadingPosition = Vector3.zero;
+        private Quaternion afterLoadingRotation = Quaternion.identity;
         #endregion
 
         #region Methods 
@@ -63,6 +64,7 @@ namespace HorrorPS1
         {
             base.OnActivation();
             playerMovable.Controller = this;
+            InGameState.Player = this;
 
             moveAction = inputActionAsset.FindAction(moveActionPath, true);
             moveAction.Enable();
@@ -76,6 +78,7 @@ namespace HorrorPS1
             focusAction.Enable();
 
             InGameState.OnCameraChange += SetCurrentCamera;
+            LoadingSceneState.OnEndSceneLoading += SetPlayerPosition;
             GameStatesManager.SetStateActivation(GameStatesManager.InGameState, true);
             SetCurrentCamera(InGameState.CurrentCamera);
         }
@@ -91,6 +94,8 @@ namespace HorrorPS1
             focusAction.Disable();
 
             InGameState.OnCameraChange -= SetCurrentCamera;
+            LoadingSceneState.OnEndSceneLoading -= SetPlayerPosition;
+
         }
 
         void IInputUpdate.Update()
@@ -152,6 +157,28 @@ namespace HorrorPS1
                 referenceRotation = cameraReferenceRotation;
         }
 
+        public void SetAfterLoadingTransform(Transform _transform)
+        {
+            afterLoadingPosition = _transform.position;
+            afterLoadingRotation = transform.rotation;
+            hasToSetPosition = true;
+        }
+
+        /// <summary>
+        /// Do not use this method from another script.
+        /// It is called from the <see cref="LoadingSceneState.OnEndSceneLoading"/> event
+        /// </summary>
+        private void SetPlayerPosition()
+        {
+            if (hasToSetPosition)
+            {
+                transform.position = afterLoadingPosition;
+                transform.rotation = afterLoadingRotation;
+                hasToSetPosition = false;
+            }
+            else Debug.LogWarning("Be sure to call the method SetAfterLoadingTransform() while loading a new scene");
+        }
+
         #region IMovable Controller
         public bool OnPlayHorizontalObstacle(int _hash, int _value) => false;
 
@@ -173,13 +200,11 @@ namespace HorrorPS1
                 _movement *= playerAttributes.SprintMultiplier;
 
             // Rotation 
-            if (useDirectionFromCamera)
-            {
-                if (cameraReferenceRotation != referenceRotation && Mathf.Abs(previousMovement.x) <= Mathf.Epsilon && Mathf.Abs(previousMovement.z) <= Mathf.Epsilon)
-                    referenceRotation = cameraReferenceRotation;
+            if (cameraReferenceRotation != referenceRotation && Mathf.Abs(previousMovement.x) <= Mathf.Epsilon && Mathf.Abs(previousMovement.z) <= Mathf.Epsilon)
+                referenceRotation = cameraReferenceRotation;
 
-                _movement = referenceRotation * _movement;
-            }
+            _movement = referenceRotation * _movement;
+
             _movement.y = 0f;
             Quaternion _aimedAngle = Quaternion.LookRotation(_movement, Vector3.up);
             previousAimedAngle = _aimedAngle;

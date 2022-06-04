@@ -20,6 +20,7 @@ namespace HorrorPS1
         public static CinemachineVirtualCamera CurrentCamera = null;
         public static float Sanity { get; set; } = 0f;
         public static ConditionElements FullfilledConditions = 0;
+        public static PlayerController Player = null;
         #endregion
 
         #region Methods 
