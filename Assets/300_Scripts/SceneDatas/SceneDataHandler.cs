@@ -20,7 +20,7 @@ namespace HorrorPS1
             OnEnterScene();
         }
 
-        public void OnEnterScene(int _cameraIndex = 0)
+        private void OnEnterScene(int _cameraIndex = 0)
         {
             for (int i = 0; i < modifiers.Length; i++)
             {
@@ -28,6 +28,8 @@ namespace HorrorPS1
             }
             GameState.ChangeCamera(sceneCameras[_cameraIndex]);
         }
+
+        public void ExitScene(int _sceneIndex) => ExitScene((OpenDoors)_sceneIndex);
 
         public void ExitScene(OpenDoors _door)
         {

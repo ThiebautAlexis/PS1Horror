@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae7d08fb0c9e474cb73cae5a8576424, type: 3}
+  m_Name: Lines Database
+  m_EditorClassIdentifier: 
+  csvPath: Assets/000_Game/Data/Dialogues/Dialogue - Feuille 1.tsv
+  linesData:
+  - ID: QG_InCar_001
+    Line: Voiture 17, ici la QG. Il y a un signalement de disparition d'enfant dans
+      votre secteur, allez vous en occuper. Terminer.
+    Annotation: 
+  - ID: Ste_InCar_002
+    Line: Okay QG, ici voiture 17. On y va. Terminer
+    Annotation: 
+  - ID: Rou_InCarFrontHousse_003
+    Line: "Bon Steeve, puisque t'es encore novice, je vais faire la d\xE9position,
+      toi tu vas aller fouiller la maison  comme je te l'ai appris la semaine derni\xE8re."
+    Annotation: 
+  - ID: Ste_InCarFrontHousse_004
+    Line: "Vous \xEAtes s\xFBr chef ? Je pourrais apprendre \xE0 faire aussi ?"
+    Annotation: 
+  - ID: Rou_InCarFrontHousse_005
+    Line: "Non mon petit, il est d\xE9j\xE0 tard et j\u2019ai ma femme qui m\u2019attend.
+      Je te montrerai demain le rapport. Je te fais d\xE9j\xE0 confiance pour faire
+      une inspection correcte, c\u2019est suffisant pour aujourd\u2019hui."
+    Annotation: 
+  - ID: Ste_InCarFrontHousse_006
+    Line: "Okay chef, c\u2019est vous qui d\xE9cider."
+    Annotation: 
+  - ID: Rou_InCarFrontHousse_007
+    Line: "Et arr\xEAte de m\u2019appeler chef !"
+    Annotation: 
+  - ID: Rou_InHouuse_008
+    Line: "Rougier \xE0 Steeven..Allo, Steeven ! D\xE9croche se putain de talkie-walkie,
+      tu as d\xE9j\xE0 oublier comment sa marche ?!  Alala, les rookies, bon, je
+      vais te r\xE9-expliquer."
+    Annotation: (Partie tuto pour le talkie-walkie)
+  - ID: Rou_InHouuse_009
+    Line: "Bon, tu te souviens comment \xE7a marche ? Exploration pi\xE8ce par pi\xE8ce.
+      Et tu me pr\xE9viens quand tu trouves quelque chose.  Ton objectif est de trouver
+      des informations sur cette affaire et si possible d\xE9bloquer la porte. Je
+      vais voir de mon c\xF4t\xE9 si on  peut faire quelque chose.Terminer"
+    Annotation: 
+  - ID: Ste_InHousse_010
+    Line: " Okay, Chef, je m\u2019en occupe. On se tient au courant.Terminer"
+    Annotation: 
+  - ID: Ste_InHousse_011
+    Line: Chef..Ici Steeven. Terminer
+    Annotation: 
+  - ID: Rou_InHousse_012
+    Line: "Qu\u2019est-ce que j\u2019ai dit sur le fait de m\u2019appeler chef  !!
+      Bon d\xE9cris moi ce qui se passe.Terminer"
+    Annotation: 
+  - ID: Ste_InHousse_013
+    Line: "J\u2019ai un escalier \xE0 c\xF4t\xE9 de moi, qui est ferm\xE9. Tu peux
+      demander au parents ce qu\u2019il a comme pi\xE8ce en haut stp.Terminer"
+    Annotation: 
+  - ID: Rou_InHousse_014
+    Line: ...
+    Annotation: (il va demander au parents mais on entent rien
+  - ID: Rou_InHousse_015
+    Line: "Il y a la chambre du petit, la salle de bain, la biblioth\xE8que\u2026Il
+      y en a beaucoup. Mais c\u2019est bien que tu demande, on va  gagner du temps.
+      La chambre de l\u2019enfant est la plus importante dans ce genre d\u2019affaires.
+      Vas-y.Terminer"
+    Annotation: 
+  - ID: Ste_InHousse_016
+    Line: " J\u2019y ai pens\xE9 aussi mais c\u2019est ferm\xE9. Terminer"
+    Annotation: 
+  - ID: Rou_InHousse_017
+    Line: "Attends, je vois avec le p\xE8re\u2026..Il dit qu'il ne sait pas, la cl\xE9
+      est normalement toujours sur la porte. Cherche la.Terminer"
+    Annotation: 
+  - ID: Ste_InHousse_018
+    Line: "Bien re\xE7u, je m\u2019en occupe.Terminer"
+    Annotation: 
+  - ID: Rou_InBath_019
+    Line: 
+    Annotation: 
+  - ID: Ste_InBath_020
+    Line: "Je suis actuellement dans la salle de bain, la baignoire est remplie de
+      sensus. Elles bougent dans tous les sens,  c\u2019est r\xE9pugnant. Oh attendais,
+      je crois qu\u2019il y a quelque chose au fond. Terminer"
+    Annotation: 
+  - ID: Rou_InBath_021
+    Line: "Quoi?! Comment c\u2019est possible \xE7a ? Je vais voir avec les parents.
+      Ne t'en approche pas.Terminer"
+    Annotation: 
+  - ID: Rou_InBath_022
+    Line: "...Ok, ils n\u2019ont pas d'explication. Toute cette histoire ne me plait
+      pas. Tu vas all\xE9 dissoudre les sansus avec du sel.Fait bien  attention de
+      ne pas te faire toucher par elles. Terminer "
+    Annotation: 
+  - ID: Ste_InBath_023
+    Line: "Re\xE7u, Chef. Terminer"
+    Annotation: 
+  - ID: Ste_InCorridor_024
+    Line: "Chef, ici Steeven. Je sais que vous pensez que j'exag\xE8re mais il se
+      passe plein de truc\u2026Les objets changent de forme et  de couleur, j\u2019ai
+      l\u2019impression d\u2019\xEAtre dans un dessin anim\xE9. Le pire, Chef c\u2019est
+      qu' il y a cette poup\xE9e qui bouge toute seule et  je doute que ce soit m\xE9canique
+      vue comment elle se d\xE9place. Qu\u2019est-ce que je fais chef ?Terminer"
+    Annotation: 
+  - ID: Rou_InCorridor_025
+    Line: "Du calme petit, \xE7a va aller. Tu as du respir\xE9 l\u2019air quand tu
+      as dissous les sansus et elle te fait halluciner. O\xF9 es-tu ?Terminer"
+    Annotation: 
+  - ID: Ste_InCorridor_026
+    Line: "Humm\u2026Je suis \xE0 c\xF4t\xE9 de l\u2019escalier. Vous avez raison,
+      je vais monter. L'air sera plus pur la haut.Terminer"
+    Annotation: 
+  - ID: Rou_InCorridor_027
+    Line: Ok, petit, prend ton temps.Terminer
+    Annotation: 
+  - ID: Rou_InBathKit_028
+    Line: "Steeven ici Rougier, alors o\xF9 est-ce que tu en es ?Terminer"
+    Annotation: 
+  - ID: Ste_InBathKit_029
+    Line: "J\u2019ai inspect\xE9 la cuisine et je suis actuellement dans la salle
+      de bain, la baignoire est remplie de sensus. Elles bougent  dans tous les sens,
+      c\u2019est r\xE9pugnant. Oh attendais, je crois qu\u2019il y a quelque chose
+      au fond. Terminer"
+    Annotation: 
+  - ID: Rou_InBathKit_030
+    Line: "Quoi?! Comment c\u2019est possible \xE7a ? Je vais voir avec les parents.
+      Ne t'en approche pas.Terminer"
+    Annotation: 
+  - ID: Rou_InBathKit_031
+    Line: "...Ok, ils n\u2019ont pas d'explication. Toute cette histoire ne me plait
+      pas. Tu vas all\xE9 dissoudre les sansus avec du sel.Fait bien  attention de
+      ne pas te faire toucher par elles. Terminer "
+    Annotation: 
+  - ID: Ste_InBathKit_0.32
+    Line: "Bien vu Chef, il me semble l\u2019avoir rep\xE9r\xE9 tout \xE0 l\u2019heure.
+      Terminer"
+    Annotation: 

@@ -1,0 +1,46 @@
+Identifiant	Line	Annotation 
+		InCar_La radio de la voiture s'allume
+QG_InCar_001	Voiture 17, ici la QG. Il y a un signalement de disparition d'enfant dans votre secteur, allez vous en occuper. Terminer. 	
+Ste_InCar_002	Okay QG, ici voiture 17. On y va. Terminer	
+		
+Rou_InCarFrontHousse_003	Bon Steeve, puisque t'es encore novice, je vais faire la déposition, toi tu vas aller fouiller la maison  comme je te l'ai appris la semaine dernière. 	
+Ste_InCarFrontHousse_004	Vous êtes sûr chef ? Je pourrais apprendre à faire aussi ?	
+Rou_InCarFrontHousse_005	Non mon petit, il est déjà tard et j’ai ma femme qui m’attend. Je te montrerai demain le rapport. Je te fais déjà confiance pour faire une inspection correcte, c’est suffisant pour aujourd’hui.	
+Ste_InCarFrontHousse_006	Okay chef, c’est vous qui décider.	
+Rou_InCarFrontHousse_007	Et arrête de m’appeler chef !	
+		
+		Steeven entre et juste après que la porte se ferme
+Rou_InHouuse_008	Rougier à Steeven..Allo, Steeven ! Décroche se putain de talkie-walkie, tu as déjà oublier comment sa marche ?!  Alala, les rookies, bon, je vais te ré-expliquer.	(Partie tuto pour le talkie-walkie)
+Rou_InHouuse_009	Bon, tu te souviens comment ça marche ? Exploration pièce par pièce. Et tu me préviens quand tu trouves quelque chose.  Ton objectif est de trouver des informations sur cette affaire et si possible débloquer la porte. Je vais voir de mon côté si on  peut faire quelque chose.Terminer 	(après tuto, Rougier enchaîne)
+Ste_InHousse_010	 Okay, Chef, je m’en occupe. On se tient au courant.Terminer	
+		
+		On doit appeler rougier de l’escalier fermer
+Ste_InHousse_011	Chef..Ici Steeven. Terminer	
+Rou_InHousse_012	Qu’est-ce que j’ai dit sur le fait de m’appeler chef  !! Bon décris moi ce qui se passe.Terminer 	
+Ste_InHousse_013	J’ai un escalier à côté de moi, qui est fermé. Tu peux demander au parents ce qu’il a comme pièce en haut stp.Terminer	
+Rou_InHousse_014	...	(il va demander au parents mais on entent rien
+Rou_InHousse_015	Il y a la chambre du petit, la salle de bain, la bibliothèque…Il y en a beaucoup. Mais c’est bien que tu demande, on va  gagner du temps. La chambre de l’enfant est la plus importante dans ce genre d’affaires. Vas-y.Terminer 	
+Ste_InHousse_016	 J’y ai pensé aussi mais c’est fermé. Terminer	
+Rou_InHousse_017	Attends, je vois avec le père…..Il dit qu'il ne sait pas, la clé est normalement toujours sur la porte. Cherche la.Terminer	
+Ste_InHousse_018	Bien reçu, je m’en occupe.Terminer	
+		
+		Soit on commence par la salle de bain
+Rou_InBath_019		
+Ste_InBath_020	Je suis actuellement dans la salle de bain, la baignoire est remplie de sensus. Elles bougent dans tous les sens,  c’est répugnant. Oh attendais, je crois qu’il y a quelque chose au fond. Terminer 	
+Rou_InBath_021	Quoi?! Comment c’est possible ça ? Je vais voir avec les parents. Ne t'en approche pas.Terminer	
+Rou_InBath_022	...Ok, ils n’ont pas d'explication. Toute cette histoire ne me plait pas. Tu vas allé dissoudre les sansus avec du sel.Fait bien  attention de ne pas te faire toucher par elles. Terminer 	
+Ste_InBath_023	Reçu, Chef. Terminer	
+		
+		Pendant que le monde devient fou et que la poupée  bouge, on traverse le couloir à l’escalier.
+Ste_InCorridor_024	Chef, ici Steeven. Je sais que vous pensez que j'exagère mais il se passe plein de truc…Les objets changent de forme et  de couleur, j’ai l’impression d’être dans un dessin animé. Le pire, Chef c’est qu' il y a cette poupée qui bouge toute seule et  je doute que ce soit mécanique vue comment elle se déplace. Qu’est-ce que je fais chef ?Terminer 	notre santé mental baisse beaucoup a ce moment
+Rou_InCorridor_025	Du calme petit, ça va aller. Tu as du respiré l’air quand tu as dissous les sansus et elle te fait halluciner. Où es-tu ?Terminer	
+Ste_InCorridor_026	Humm…Je suis à côté de l’escalier. Vous avez raison, je vais monter. L'air sera plus pur la haut.Terminer	
+Rou_InCorridor_027	Ok, petit, prend ton temps.Terminer 	
+		
+		Soit on commence par la cuisine
+Rou_InBathKit_028	Steeven ici Rougier, alors où est-ce que tu en es ?Terminer	
+Ste_InBathKit_029	J’ai inspecté la cuisine et je suis actuellement dans la salle de bain, la baignoire est remplie de sensus. Elles bougent  dans tous les sens, c’est répugnant. Oh attendais, je crois qu’il y a quelque chose au fond. Terminer	
+Rou_InBathKit_030	Quoi?! Comment c’est possible ça ? Je vais voir avec les parents. Ne t'en approche pas.Terminer	
+Rou_InBathKit_031	...Ok, ils n’ont pas d'explication. Toute cette histoire ne me plait pas. Tu vas allé dissoudre les sansus avec du sel.Fait bien  attention de ne pas te faire toucher par elles. Terminer 	
+Ste_InBathKit_0.32	Bien vu Chef, il me semble l’avoir repéré tout à l’heure. Terminer	
+		La suite du dialogue rejoint: Pendant que le monde  devient fou et que la poupée bouge, on traverse le  couloir à l’escalier. (juste au dessus)

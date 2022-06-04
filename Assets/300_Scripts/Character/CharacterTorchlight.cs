@@ -11,8 +11,6 @@ namespace HorrorPS1
         [SerializeField, Enhanced, Required] private new Light light = null;
         [SerializeField, Enhanced, Required] private TorchLightData data = null;
         private Sequence focusingSequence = null;
-
-        private IInteractable currentInteractable = null;
         private static readonly RaycastHit[] interactionArray = new RaycastHit[1];
         #endregion
 
@@ -73,29 +71,7 @@ namespace HorrorPS1
                 _interactable.Interact();
             }
         }
-        
-        private void Update()
-        {
-            /*
-            if(canInteract && CastInteraction(out IInteractable _interactable))
-            {
-                if (_interactable == currentInteractable)
-                    return;
 
-                if(currentInteractable != null)
-                {
-                    currentInteractable.CancelInteraction();
-                }
-                currentInteractable = _interactable;
-                currentInteractable.Interact();
-            }
-            else if(currentInteractable != null)
-            {
-                currentInteractable.CancelInteraction();
-                currentInteractable = null;
-            }
-            */
-        }
         #endregion
     }
 }

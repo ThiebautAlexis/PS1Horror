@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86eea4298b858ff42beb9f6faec5498d, type: 3}
   m_Name: Dialogue_Test
   m_EditorClassIdentifier: 
-  DialogueLines:
-  - Portrait: {fileID: 21300000, guid: f1548419c25953244bc17207bea3fd8b, type: 3}
-    Lines:
-    - test
-    - 'test test '
-    - test test fdezs gezr
+  database: {fileID: 11400000, guid: f9a511b93e7bc114aa48df38213791b0, type: 2}
+  Portrait: {fileID: 21300000, guid: 222450a9149bd754d8a5d294d1cad03f, type: 3}
+  LinesID:
+  - QG_InCar_001

@@ -5,6 +5,7 @@ using UnityEditor;
 
 namespace HorrorPS1
 {
+    /*
     [CustomPropertyDrawer(typeof(DialogueLine))]
     public class DialogueLinePropertyDrawer : EnhancedPropertyEditor
     {
@@ -61,4 +62,5 @@ namespace HorrorPS1
             return GetDefaultHeight(_property, _label);
         }
     }
+    */
 }
