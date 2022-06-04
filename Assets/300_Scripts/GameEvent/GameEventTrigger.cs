@@ -17,7 +17,7 @@ namespace HorrorPS1
         #region Methods 
         protected void TriggerEvents()
         {
-            if(conditions > 0 && (GameState.FullfilledConditions & conditions) == 0)
+            if(conditions > 0 && (InGameState.FullfilledConditions & conditions) == 0)
                 return;
 
             for (int i = 0; i < events.Length; i++)

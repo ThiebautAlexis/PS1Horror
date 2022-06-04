@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 6632837653690649953}
   - component: {fileID: 6632837653690649956}
   - component: {fileID: 6632837653690649957}
+  - component: {fileID: 4753789470014438222}
   m_Layer: 10
   m_Name: Player Controller
   m_TagString: Untagged
@@ -189,7 +190,7 @@ MonoBehaviour:
   Tags:
     Tags: []
   lastModifiedBy: CKG_Alexis
-  lastModifiedDate: 03/06/2022 20:29:20
+  lastModifiedDate: 04/06/2022 18:48:41
   IsPersistent: 0
 --- !u!114 &6632837653690649962
 MonoBehaviour:
@@ -206,6 +207,7 @@ MonoBehaviour:
   isActivated: 0
   inputActionAsset: {fileID: -944628639613478452, guid: 28c65cef49bd2d841a00bd00a2d201bf, type: 3}
   torchlight: {fileID: 6632837653690649953}
+  walkieTalkie: {fileID: 4753789470014438222}
   playerMovable: {fileID: 6632837653690649959}
   animator: {fileID: 821001643931918052}
   collisionMask:
@@ -258,7 +260,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   light: {fileID: 2910941411253389163}
   data: {fileID: 11400000, guid: 8b36a5e48d457694588773636adb8a7e, type: 2}
-  canInteract: 1
 --- !u!54 &6632837653690649956
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -289,6 +290,18 @@ CapsuleCollider:
   m_Height: 3.3141785
   m_Direction: 1
   m_Center: {x: 0.057658732, y: 1.6570892, z: 0}
+--- !u!114 &4753789470014438222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6632837653690649955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0209614d804ab844d8229d1f02626021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6632837654539288115
 GameObject:
   m_ObjectHideFlags: 0

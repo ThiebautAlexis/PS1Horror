@@ -22,10 +22,10 @@ namespace HorrorPS1
             switch (action)
             {
                 case InventoryAction.Add:
-                    GameState.FullfillCondition(inventoryElement);
+                    InGameState.FullfillCondition(inventoryElement);
                     break;
                 case InventoryAction.Remove:
-                    GameState.RemoveCondition(inventoryElement);
+                    InGameState.RemoveCondition(inventoryElement);
                     break;
                 default:
                     break;

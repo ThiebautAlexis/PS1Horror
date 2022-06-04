@@ -26,7 +26,7 @@ namespace HorrorPS1
             {
                 modifiers[i].ModifierTransform.gameObject.SetActive(sceneData.ModifiersValue > modifiers[i].ModifierThreshold);
             }
-            GameState.ChangeCamera(sceneCameras[_cameraIndex]);
+            InGameState.ChangeCamera(sceneCameras[_cameraIndex]);
         }
 
         public void ExitScene(int _sceneIndex) => ExitScene((OpenDoors)_sceneIndex);
@@ -96,7 +96,7 @@ namespace HorrorPS1
 
         public void SetCamera(int _cameraIndex)
         {
-            GameState.ChangeCamera(sceneCameras[_cameraIndex]);
+            InGameState.ChangeCamera(sceneCameras[_cameraIndex]);
         }
         #endregion
     }

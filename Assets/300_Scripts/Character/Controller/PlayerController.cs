@@ -38,6 +38,7 @@ namespace HorrorPS1
 
         [Section("Components ")]
         [SerializeField] private CharacterTorchlight torchlight = null;
+        [SerializeField] private WalkieTalkie walkieTalkie = null;
         [SerializeField] private Movable.Movable playerMovable = null;
         [SerializeField] private Animator animator = null;
 
@@ -74,8 +75,9 @@ namespace HorrorPS1
             focusAction = inputActionAsset.FindAction(focusActionPath, true);
             focusAction.Enable();
 
-            GameState.OnCameraChange += SetCurrentCamera;
-            SetCurrentCamera(GameState.CurrentCamera);
+            InGameState.OnCameraChange += SetCurrentCamera;
+            GameStatesManager.SetStateActivation(GameStatesManager.InGameState, true);
+            SetCurrentCamera(InGameState.CurrentCamera);
         }
 
         protected override void OnDeactivation()
@@ -88,31 +90,40 @@ namespace HorrorPS1
             sprintAction.Disable();
             focusAction.Disable();
 
-            GameState.OnCameraChange -= SetCurrentCamera;
+            InGameState.OnCameraChange -= SetCurrentCamera;
         }
 
         void IInputUpdate.Update()
         {
-            Vector2 _movement = moveAction.ReadValue<Vector2>();
-            playerMovable.AddHorizontalMovement(_movement.x, false);
-            playerMovable.AddForwardMovement(_movement.y);
+            if(GameStatesManager.currentGameState == GameStatesManager.InGameState)
+            {
+                Vector2 _movement = moveAction.ReadValue<Vector2>();
+                playerMovable.AddHorizontalMovement(_movement.x, false);
+                playerMovable.AddForwardMovement(_movement.y);
 
-            // Check here if the sprint input is triggered
-            isSprinting = !isSprinting && (sprintTimer / playerAttributes.SprintLimit) > playerAttributes.SprintThreshold ? // if is in cooldown
-                          false :                                                                                           // then false
-                          sprintAction.IsPressed();                                                                         // else check input
+                // Check here if the sprint input is triggered
+                isSprinting = !isSprinting && (sprintTimer / playerAttributes.SprintLimit) > playerAttributes.SprintThreshold ? // if is in cooldown
+                              false :                                                                                           // then false
+                              sprintAction.IsPressed();                                                                         // else check input
 
-            ApplySprint();
+                ApplySprint();
 
 
-            if (focusAction.WasPressedThisFrame())
-                torchlight.FocusTorchLight();
-            else if (focusAction.WasReleasedThisFrame())
-                torchlight.UnfocusTorchLight();
+                if (focusAction.WasPressedThisFrame())
+                    torchlight.FocusTorchLight();
+                else if (focusAction.WasReleasedThisFrame())
+                    torchlight.UnfocusTorchLight();
 
-            if (interactAction.WasPressedThisFrame())
-                torchlight.TryInteraction();
-
+                if (interactAction.WasPressedThisFrame())
+                    torchlight.TryInteraction();
+                
+                return;
+            }
+            if(GameStatesManager.currentGameState == GameStatesManager.WalkieTalkieState)
+            {
+                if (interactAction.WasPressedThisFrame())
+                    walkieTalkie.SkipReading();
+            }
         }
 
         private void ApplySprint()
