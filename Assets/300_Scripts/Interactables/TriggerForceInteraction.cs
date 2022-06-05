@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace HorrorPS1
 {
+    /*
     public class TriggerForceInteraction : MonoBehaviour
     {
         #region Fields and Properties
@@ -20,4 +21,5 @@ namespace HorrorPS1
         }
         #endregion
     }
+    */
 }
