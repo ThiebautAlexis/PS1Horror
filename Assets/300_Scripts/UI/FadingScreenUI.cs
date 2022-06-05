@@ -29,7 +29,7 @@ namespace HorrorPS1
         private void FadeIn()
         {
             if (fadingSequence.IsActive())
-                fadingSequence.Kill(false);
+                fadingSequence.Kill(true);
 
             fadingSequence = DOTween.Sequence();
             {
@@ -40,7 +40,7 @@ namespace HorrorPS1
         private void FadeOut()
         {
             if (fadingSequence.IsActive())
-                fadingSequence.Kill(false);
+                fadingSequence.Kill(true);
 
             fadingSequence = DOTween.Sequence();
             {

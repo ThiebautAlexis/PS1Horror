@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace HorrorPS1
 {
-    [CreateAssetMenu(fileName = "OpenDoorEvent_", menuName = "PS1 Horror Game/Events/Open door Event", order = 150)]
-    public class OpenDoorEvent : GameEvent
+    [CreateAssetMenu(fileName = "UnlockDoorEvent_", menuName = "PS1 Horror Game/Events/Unlock door Event", order = 150)]
+    public class UnlockDoorEvent : GameEvent
     {
         [Section("Open Door Event")]
         [SerializeField, Enhanced, EnhancedEditor.Range(-1,9)] private int unlockedIndex = -1;

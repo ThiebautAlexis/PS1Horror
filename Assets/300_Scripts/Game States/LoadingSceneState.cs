@@ -33,13 +33,13 @@ namespace HorrorPS1
 
         private static void UnloadPreviousScene(SceneAsset obj)
         {
-            OnEndSceneLoading?.Invoke();
             SceneManager.UnloadSceneAsync(previousScene).completed += OnSceneLoaded;
         }
 
         public static void OnSceneLoaded(AsyncOperation _operation)
         {
-            GameStatesManager.SetStateActivation(GameStatesManager.LoadingSceneState, true);
+            OnEndSceneLoading?.Invoke();
+            GameStatesManager.SetStateActivation(GameStatesManager.LoadingSceneState, false);
         }
 
 
