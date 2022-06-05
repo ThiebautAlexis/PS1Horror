@@ -1201,6 +1201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2060676838532884925}
+  - component: {fileID: 1486008237272492292}
   - component: {fileID: 3757621674297960495}
   m_Layer: 0
   m_Name: Steeven
@@ -1224,6 +1225,24 @@ Transform:
   m_Father: {fileID: 8266291693537904988}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1486008237272492292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8041552358809713482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378875c9daf3c7145b8108c8a4513da0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comment: 
+  Tags:
+    Tags: []
+  lastModifiedBy: C
+  lastModifiedDate: 03/06/2022 16:53:41
+  IsPersistent: 0
 --- !u!137 &3757621674297960495
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -1510,7 +1529,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8266291693537904988}
-  - component: {fileID: -437272178767290653}
+  - component: {fileID: 6548050619688792955}
   - component: {fileID: 9019691286807572667}
   m_Layer: 0
   m_Name: Steeven
@@ -1536,7 +1555,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-437272178767290653
+--- !u!114 &6548050619688792955
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1545,14 +1564,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8789923470158238694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 877eb788512e6904897eca70a462a2c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 378875c9daf3c7145b8108c8a4513da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   comment: 
   Tags:
     Tags: []
-  lastModifiedBy: Amaur
-  lastModifiedDate: 01/06/2022 08:43:50
+  lastModifiedBy: C
+  lastModifiedDate: 03/06/2022 16:50:42
   IsPersistent: 0
 --- !u!95 &9019691286807572667
 Animator:
