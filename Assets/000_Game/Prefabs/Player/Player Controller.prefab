@@ -169,8 +169,8 @@ MonoBehaviour:
   comment: 
   Tags:
     Tags: []
-  lastModifiedBy: CKG_Alexis
-  lastModifiedDate: 03/06/2022 17:40:39
+  lastModifiedBy: C
+  lastModifiedDate: 03/06/2022 19:44:13
   IsPersistent: 0
 --- !u!114 &6632837653690649962
 MonoBehaviour:
@@ -191,8 +191,8 @@ MonoBehaviour:
   animator: {fileID: 821001643931918052}
   collisionMask:
     serializedVersion: 2
-    m_Bits: 65
-  useDirectionFromCamera: 0
+    m_Bits: 449
+  useDirectionFromCamera: 1
   playerAttributes: {fileID: 11400000, guid: 89cd9b19c2d91144e88ff1a4637b5105, type: 2}
   staminaGauge: {fileID: 0}
 --- !u!114 &6632837653690649959
